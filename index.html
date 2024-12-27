@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروژه هوش مصنوعی</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#">برنامه‌ها</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">برنامه ۱</a></li>
+                        <li><a href="#">برنامه ۲</a></li>
+                        <li><a href="#">برنامه ۳</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">درباره‌ی من</a></li>
+                <li><a href="#">علل وجود</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="intro">
+        <h1>خوش آمدید به پروژه‌های هوش مصنوعی</h1>
+        <p>ما برنامه‌هایی را برای استفاده از تکنولوژی‌های یادگیری ماشین و هوش مصنوعی ارائه می‌دهیم. اینجا جایی است که هوش مصنوعی با دنیای واقعی ملاقات می‌کند.</p>
+    </section>
+
+    <section class="projects">
+        <h2>پروژه‌ها</h2>
+        <div class="project-cards">
+            <div class="card" onclick="window.location.href='#'">
+                <h3>پروژه ۱</h3>
+                <p>توضیحات کوتاه پروژه ۱</p>
+            </div>
+            <div class="card" onclick="window.location.href='#'">
+                <h3>پروژه ۲</h3>
+                <p>توضیحات کوتاه پروژه ۲</p>
+            </div>
+            <div class="card" onclick="window.location.href='#'">
+                <h3>پروژه ۳</h3>
+                <p>توضیحات کوتاه پروژه ۳</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="back-to-top" onclick="scrollToTop()">بازگشت به بالا</button>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>ایمیل: <a href="mailto:aghabidareh@gmail.com">aghabidareh@gmail.com</a></p>
+        <p>شماره تماس: <a href="tel:+989192511140">+989192511140</a></p>
+        <p><a href="#">گیت هاب</a></p>
+        <p><a href="#">درباره‌ی من</a></p>
+        <p><a href="#">برنامه‌ها</a></p>
+    </div>
+</footer>
+
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
