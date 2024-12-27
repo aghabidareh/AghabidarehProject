@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پروژه هوش مصنوعی</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
@@ -36,15 +37,15 @@
     <section class="projects">
         <h2>پروژه‌ها</h2>
         <div class="project-cards">
-            <div class="card" onclick="window.location.href='#'">
+            <div class="card" onclick="location_href('#')">
                 <h3>پروژه ۱</h3>
                 <p>توضیحات کوتاه پروژه ۱</p>
             </div>
-            <div class="card" onclick="window.location.href='#'">
+            <div class="card" onclick="location_href('#')">
                 <h3>پروژه ۲</h3>
                 <p>توضیحات کوتاه پروژه ۲</p>
             </div>
-            <div class="card" onclick="window.location.href='#'">
+            <div class="card" onclick="location_href('#')">
                 <h3>پروژه ۳</h3>
                 <p>توضیحات کوتاه پروژه ۳</p>
             </div>
@@ -56,13 +57,26 @@
 
 <footer>
     <div class="footer-content">
-        <p>ایمیل: <a href="mailto:aghabidareh@gmail.com">aghabidareh@gmail.com</a></p>
-        <p>شماره تماس: <a href="tel:+989192511140">+989192511140</a></p>
-        <p><a href="https://github.com/aghabidareh" target="_blank">گیت هاب</a></p>
-        <p><a href="#top">درباره‌ی من</a></p>
-        <p><a href="#top">برنامه‌ها</a></p>
+        <div class="footer-info">
+            <p>ایمیل: <a href="mailto:aghabidareh@gmail.com">aghabidareh@gmail.com</a></p>
+            <p>شماره تماس: <a href="tel:+989192511140">+989192511140</a></p>
+        </div>
+
+        <div class="footer-links">
+            <p><a onclick="scrollToTop()">درباره‌ی من</a></p>
+            <p><a onclick="scrollToTop()">برنامه‌ها</a></p>
+            <p><a href="https://github.com/aghabidareh" target="_blank">گیت هاب</a></p>
+        </div>
+
+        <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
     </div>
 </footer>
+
 <script src="js/scripts.js"></script>
 </body>
 </html>
