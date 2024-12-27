@@ -1,4 +1,3 @@
-/* تنظیمات عمومی */
 * {
     margin: 0;
     padding: 0;
@@ -12,14 +11,13 @@ body {
     color: #f1f1f1;
     margin: 0;
     transition: background-color 0.3s ease;
-    perspective: 1000px; /* ایجاد فضای 3D */
+    perspective: 1500px;
 }
 
-/* هدر */
 header {
     background-color: #1a1a1a;
     padding: 20px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -51,7 +49,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
     color: #4caf50;
-    transform: scale(1.1) translateZ(10px); /* ایجاد عمق */
+    transform: scale(1.1) rotateY(10deg);
 }
 
 header nav .dropdown:hover .dropdown-content {
@@ -82,9 +80,9 @@ header nav .dropdown .dropdown-content a:hover {
     background-color: #575757;
 }
 
-/* محتوا */
 main {
     padding: 50px 0;
+    transform-style: preserve-3d;
 }
 
 .intro {
@@ -99,12 +97,14 @@ main {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
+    transform: rotateY(-10deg);
 }
 
 .intro p {
     font-size: 22px;
     color: #bbb;
     line-height: 1.8;
+    transform: rotateX(5deg);
 }
 
 .projects h2 {
@@ -115,6 +115,7 @@ main {
     animation: fadeIn 2s forwards;
     animation-delay: 1s;
     font-weight: 600;
+    transform: rotateY(10deg);
 }
 
 .project-cards {
@@ -123,6 +124,7 @@ main {
     gap: 40px;
     animation: fadeIn 2s forwards;
     animation-delay: 1.5s;
+    transform: rotateX(10deg);
 }
 
 .card {
@@ -130,12 +132,12 @@ main {
     width: 350px;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     text-align: center;
     opacity: 0;
-    transform: rotateY(15deg); /* افکت 3D */
+    transform: rotateX(-20deg);
     animation: cardAppear 1s forwards;
 }
 
@@ -151,8 +153,8 @@ main {
 }
 
 .card:hover {
-    transform: scale(1.05) rotateY(0deg); /* بزرگتر شدن و صاف شدن */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
     background-color: #333;
 }
 
@@ -160,7 +162,6 @@ main {
     color: #4caf50;
 }
 
-/* دکمه بازگشت به بالا */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -172,8 +173,8 @@ main {
     border-radius: 50%;
     font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     opacity: 0;
     animation: fadeIn 2s forwards;
     animation-delay: 2s;
@@ -181,17 +182,17 @@ main {
 
 .back-to-top:hover {
     background-color: #45a049;
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(180deg);
 }
 
-/* فوتر */
 footer {
     background-color: #1a1a1a;
     padding: 30px 0;
     text-align: center;
     font-size: 16px;
     color: #bbb;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    transform: rotateX(5deg);
 }
 
 footer a {
@@ -204,7 +205,6 @@ footer a:hover {
     color: #81c784;
 }
 
-/* انیمیشن‌ها */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -225,7 +225,6 @@ footer a:hover {
     }
 }
 
-/* ریسپانسیو */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
@@ -239,5 +238,10 @@ footer a:hover {
 
     .intro h1 {
         font-size: 40px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
     }
 }
