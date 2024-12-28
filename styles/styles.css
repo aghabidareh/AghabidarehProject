@@ -83,6 +83,11 @@ header nav ul li a:hover {
     text-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
 }
 
+.active{
+    color: #64d268;
+    text-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
+}
+
 header nav .dropdown:hover .dropdown-content {
     display: block;
 }
