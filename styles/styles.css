@@ -46,9 +46,12 @@ body::before {
 
 header {
     background-color: #1a1a1a;
-    padding: 20px 0;
+    padding: 20px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
