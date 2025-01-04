@@ -38,13 +38,16 @@
     </section>
 
     <section class="text-similarity">
-        <div class="form-container">
-            <textarea id="text1" placeholder="متن اول را وارد کنید..." rows="6"></textarea>
-            <textarea id="text2" placeholder="متن دوم را وارد کنید..." rows="6"></textarea>
-            <button id="submit-btn">محاسبه شباهت</button>
-        </div>
+        <form action="#" method="post">
+            <div class="form-container">
+                <textarea name="text1" placeholder="متن اول را وارد کنید..." rows="6" required></textarea>
+                <textarea name="text2" placeholder="متن دوم را وارد کنید..." rows="6" required></textarea>
+                <button type="submit">محاسبه شباهت</button>
+            </div>
+        </form>
         <div class="result">
-            <h2 id="similarity-result">درصد شباهت: -</h2>
+            <h2>درصد شباهت: 78</h2>
+            <h2>شباهت نسبی و مناسبی دارن</h2>
         </div>
     </section>
 </main>
@@ -65,29 +68,6 @@
         </div>
     </div>
 </footer>
-<script>
-    document.getElementById('submit-btn').addEventListener('click', async () => {
-        const text1 = document.getElementById('text1').value;
-        const text2 = document.getElementById('text2').value;
 
-        if (!text1 || !text2) {
-            alert("لطفاً هر دو متن را وارد کنید!");
-            return;
-        }
-
-        try {
-            const response = await fetch('url', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text1, text2 }),
-            });
-
-            const data = await response.json();
-            document.getElementById('similarity-result').innerText = `درصد شباهت: ${data.similarity}%`;
-        } catch (error) {
-            alert("مشکلی در ارتباط با سرور رخ داده است!");
-        }
-    });
-</script>
 </body>
 </html>
