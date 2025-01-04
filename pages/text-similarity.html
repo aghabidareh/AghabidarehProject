@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شباهت معنایی</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/text-similarity.css">
 </head>
 <body>
+<header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="../index.html">خانه</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">پروژه‌ها</a>
+                    <ul class="dropdown-content">
+                        <li><a href="text-similarity.html" class="active">شباهت معنایی</a></li>
+                        <li><a href="category-detection.html">دسته بندی متن</a></li>
+                        <li><a href="author.html">نویسنده</a></li>
+                    </ul>
+                </li>
+                <li><a href="about-me.html">درباره‌ی من</a></li>
+                <li><a href="why.html">علل وجود</a></li>
+                <li><a href="login.html">ورود</a></li>
+                <li><a href="registration.html">ثبت نام</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
+<main>
+    <section class="intro">
+        <h1>پروژه شباهت معنایی</h1>
+        <p>این ابزار برای محاسبه درصد شباهت معنایی دو متن طراحی شده است. شما می‌توانید دو متن وارد کنید و نتیجه را مشاهده نمایید.</p>
+    </section>
+
+    <section class="text-similarity">
+        <div class="form-container">
+            <textarea id="text1" placeholder="متن اول را وارد کنید..." rows="6"></textarea>
+            <textarea id="text2" placeholder="متن دوم را وارد کنید..." rows="6"></textarea>
+            <button id="submit-btn">محاسبه شباهت</button>
+        </div>
+        <div class="result">
+            <h2 id="similarity-result">درصد شباهت: -</h2>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <p>ایمیل: <a href="mailto:aghabidareh@gmail.com">aghabidareh@gmail.com</a></p>
+            <p>شماره تماس: <a href="tel:+989192511140">+989192511140</a></p>
+            <p>&copy; 2024 پروژه آقابیداره | تمام حقوق محفوظ است</p>
+        </div>
+        <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://github.com/aghabidareh" class="social-icon"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.getElementById('submit-btn').addEventListener('click', async () => {
+        const text1 = document.getElementById('text1').value;
+        const text2 = document.getElementById('text2').value;
+
+        if (!text1 || !text2) {
+            alert("لطفاً هر دو متن را وارد کنید!");
+            return;
+        }
+
+        try {
+            const response = await fetch('url', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text1, text2 }),
+            });
+
+            const data = await response.json();
+            document.getElementById('similarity-result').innerText = `درصد شباهت: ${data.similarity}%`;
+        } catch (error) {
+            alert("مشکلی در ارتباط با سرور رخ داده است!");
+        }
+    });
+</script>
 </body>
 </html>
