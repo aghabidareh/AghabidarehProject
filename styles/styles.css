@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/iranyekan');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'IRANYekan' , sans-serif;
     direction: rtl;
     background-color: #121212;
     color: #f1f1f1;
