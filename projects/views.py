@@ -1,19 +1,20 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    pass
+    return HttpResponse('Index')
 
 def about_me(request):
-    pass
+    return HttpResponse('About me')
 
 def why(request):
-    pass
+    return HttpResponse('Why')
 
-def text_simialrity(request):
-    pass
+def text_similarity(request):
+    return HttpResponse('Text Similarity')
 
 def category_detection(request):
-    pass
+    return HttpResponse('Category Detection')
 
 def author(request):
-    pass
+    return HttpResponse('Author')
