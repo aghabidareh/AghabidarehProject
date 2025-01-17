@@ -1,1 +1,25 @@
 {% extends 'projects/base.html' %}
+{% block content %}
+	<section class="intro">
+        <h1> به پروژه‌های هوش مصنوعی خوش آمدید</h1>
+        <p>ما برنامه‌هایی را برای استفاده از تکنولوژی‌های یادگیری ماشین و هوش مصنوعی ارائه می‌دهیم. اینجا جایی است که هوش مصنوعی با دنیای واقعی ملاقات می‌کند.</p>
+    </section>
+
+    <section class="projects">
+        <h2>پروژه‌ها</h2>
+        <div class="project-cards">
+            <div class="card" onclick="location_href('{% url 'text-similarity' %}')">
+                <h3>شباهت معنایی</h3>
+                <p>دو متن وارد کن، ببین چقدر به هم شبیه فکر می‌کنن!</p>
+            </div>
+            <div class="card" onclick="location_href('{% url 'category-detection' %}')">
+                <h3>دسته بندی متن</h3>
+                <p>متنتو تحلیل کن و دسته‌بندیشو کشف کن!باما!</p>
+            </div>
+            <div class="card" onclick="location_href('{% url 'author' %}')">
+                <h3>نویسنده</h3>
+                <p>الهام‌بخش‌ترین داستان‌ها، فقط با یک کلمه از تو!</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
