@@ -4,3 +4,39 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/content.css' %}">
 {% endblock %}
+
+{% block content %}
+    <section class="about-me">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="{% static 'images/me.jpeg' %}" alt="Profile Image">
+            </div>
+            <div class="about-text">
+                <h1>سلام! من آقابیداره هستم</h1>
+                <p>من یک توسعه دهنده ی بک اند،یادگیری ماشین و علم داده هستم. به طراحی و حل مسائل دنیای واقعی در بستر علم داده و بک اند علافه ی بسیار زیادی دارم.</p>
+                <p>تخصص من شامل پایتون، علم داده، فریم ورک بسیار وسیع و جذاب پایتون و همچنین دانش پایه ای از دیزاین وب است،همیشه به دنبال یادگیری و بهبود مهارت‌هایم در دنیای فناوری‌های روز هستم.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>مهارت‌ها</h2>
+        <div class="skills-list">
+            <div class="skill-card">
+                <i class="fas fa-cogs"></i>
+                <h3>یادگیری ماشین</h3>
+                <p>جربه ی عمیق در توسعه ی نرم‌افزار ها و مدل های مبتنی بر یادگیری مایشن در پایتون</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-python"></i>
+                <h3>پایتون</h3>
+                <p>متخصص در استفاده از پایتون برای توسعه برنامه‌های یادگیری ماشین و هوش مصنوعی و جنگو</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>جنگو</h3>
+                <p>تجربه کار با ماژول ها و قسمت های مهم و اساسی این فریم ورک وسیع و جذاب</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
