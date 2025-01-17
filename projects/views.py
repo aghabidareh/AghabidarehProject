@@ -1,20 +1,19 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return HttpResponse('Index')
+    return render(request , 'projects/index.html')
 
 def about_me(request):
-    return HttpResponse('About me')
+    return render(request , 'projects/about-me.html')
 
 def why(request):
-    return HttpResponse('Why')
+    return render(request , 'projects/why.html')
 
 def text_similarity(request):
-    return HttpResponse('Text Similarity')
+    return render(request , 'projects/text-similarity.html')
 
 def category_detection(request):
-    return HttpResponse('Category Detection')
+    return render(request , 'projects/category-detection.html')
 
 def author(request):
-    return HttpResponse('Author')
+    return render(request , 'projects/author.html')
