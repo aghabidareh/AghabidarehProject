@@ -17,17 +17,17 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="{% url 'index' %}" class="active">خانه</a></li>
+                <li><a href="{% url 'index' %}" class="{% if request.path == '/' %}active{% endif %}">خانه</a></li>
                 <li class="dropdown">
-                    <a href="#">پروژه‌ها</a>
+                    <a href="#" class="{% if request.path != '/' and request.path != '/about-me' and request.path != '/why' %}active{% endif %}">پروژه‌ها</a>
                     <ul class="dropdown-content">
-                        <li><a href="{% url 'text-similarity' %}">شباهت معنایی</a></li>
-                        <li><a href="{% url 'category-detection' %}">دسته بندی متن</a></li>
-                        <li><a href="{% url 'author' %}">نویسنده</a></li>
+                        <li><a href="{% url 'text-similarity' %}" class="{% if request.path == '/text-similarity' %}active{% endif %}">شباهت معنایی</a></li>
+                        <li><a href="{% url 'category-detection' %}" class="{% if request.path == '/category-detection' %}active{% endif %}">دسته بندی متن</a></li>
+                        <li><a href="{% url 'author' %}" class="{% if request.path == '/author' %}active{% endif %}">نویسنده</a></li>
                     </ul>
                 </li>
-                <li><a href="{% url 'about-me' %}">درباره‌ی من</a></li>
-                <li><a href="{% url 'why' %}">علل وجود</a></li>
+                <li><a href="{% url 'about-me' %}" class="{% if request.path == '/about-me' %}active{% endif %}">درباره‌ی من</a></li>
+                <li><a href="{% url 'why' %}" class="{% if request.path == '/why' %}active{% endif %}">علل وجود</a></li>
             </ul>
         </nav>
     </div>
