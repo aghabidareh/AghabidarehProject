@@ -4,3 +4,21 @@
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/author.css' %}">
 {% endblock %}
+
+{% block content %}
+	<section class="intro">
+        <h1>پروژه نویسنده</h1>
+        <p>این ابزار برای تولید داستان یا انشا بر اساس یک موضوع خاص طراحی شده است. شما می‌توانید موضوع یا کلمه دلخواه خود را وارد کنید تا یک داستان منحصر به فرد برای شما تولید شود.</p>
+    </section>
+
+    <section class="author">
+        <form method="POST" action="#" class="form-container">
+            <input type="text" name="topic" placeholder="موضوع یا کلمه دلخواه خود را وارد کنید..." required>
+            <button type="submit">تولید داستان</button>
+        </form>
+        <div class="result">
+            <h2>داستان تولید شده:</h2>
+            <p>یکی بود یکی نبود غیر از خدا هیچکس نبود</p>
+        </div>
+    </section>
+{% endblock %}
