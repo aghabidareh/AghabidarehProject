@@ -12,12 +12,17 @@
     </section>
 
     <section class="proj">
-        <form method="POST" action="#" class="form-container">
+        <form method="POST" class="form-container">
+            {% csrf_token %}
             <textarea name="text" placeholder="متن خود را اینجا وارد کنید..." rows="8" required></textarea>
             <button type="submit">تشخیص دسته‌بندی</button>
         </form>
         <div class="result">
-            <h2>دسته‌بندی متن: اجتماعی</h2>
+            {% if result %}
+            	<h2>دسته‌بندی متن: {{ result }}</h2>
+            {% else %}
+                <h2>متنی وارد کنید!!!</h2>
+            {% endif %}
         </div>
     </section>
 {% endblock %}
