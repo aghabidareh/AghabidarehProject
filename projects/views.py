@@ -23,4 +23,4 @@ def category_detection(request):
     return render(request , 'projects/category-detection.html')
 
 def author(request):
-    return render(request , 'projects/author.html')
+    return render(request, 'projects/poet.html')
