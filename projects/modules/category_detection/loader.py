@@ -1,4 +1,5 @@
 from pickle import load
+import joblib
 import nltk
 
 with open('projects\modules\category_detection\stopwords.txt' , 'r' , encoding='utf-8') as stopwords_file:
@@ -9,7 +10,7 @@ nltk_stopwords = nltk.corpus.stopwords.words('english')
 stopwords.extend(nltk_stopwords)
 
 with open('projects\modules\category_detection\model.h5' , 'rb') as f:
-    model = load(f)
+    model = joblib.load(f)
 
 with open('projects\modules\category_detection\\normalizer.h5' , 'rb') as f:
     normalizer = load(f)
