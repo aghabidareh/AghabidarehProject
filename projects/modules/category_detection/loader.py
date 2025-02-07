@@ -1,5 +1,4 @@
-from pickle import load
-import joblib
+from joblib import load
 import nltk
 
 with open('projects\modules\category_detection\stopwords.txt' , 'r' , encoding='utf-8') as stopwords_file:
@@ -10,12 +9,12 @@ nltk_stopwords = nltk.corpus.stopwords.words('english')
 stopwords.extend(nltk_stopwords)
 
 with open('projects\modules\category_detection\model.h5' , 'rb') as f:
-    model = joblib.load(f)
+    model = load(f)
 
 with open('projects\modules\category_detection\\normalizer.h5' , 'rb') as f:
     normalizer = load(f)
 
-with open('projects\modules\category_detection\stem_lemmatize.h5' , 'rb') as f:
+with open('projects\modules\category_detection\stemmer.h5' , 'rb') as f:
     stemmer_lemmatizer = load(f)
 
 with open('projects\modules\category_detection\\tokenizer.h5' , 'rb') as f:
@@ -24,6 +23,5 @@ with open('projects\modules\category_detection\\tokenizer.h5' , 'rb') as f:
 with open('projects\modules\category_detection\\vectorizer.h5' , 'rb') as f:
     vectorizer = load(f)
 
-with open('projects\modules\category_detection\label_encoder.h5' , 'rb') as f:
+with open('projects\modules\category_detection\encoder.h5' , 'rb') as f:
     label_encoder = load(f)
-

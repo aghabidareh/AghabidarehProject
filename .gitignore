@@ -173,10 +173,10 @@ cython_debug/
 
 Aghabidareh/local_setting.py
 db*
-projects/modules/category_detection/label_encoder.h5
+projects/modules/category_detection/encoder.h5
 projects/modules/category_detection/model.h5
 projects/modules/category_detection/normalizer.h5
-projects/modules/category_detection/stem_lemmatize.h5
+projects/modules/category_detection/stemmer.h5
 projects/modules/category_detection/tokenizer.h5
 projects/modules/category_detection/vectorizer.h5
 projects/modules/category_detection/stopwords.txt
