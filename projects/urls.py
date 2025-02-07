@@ -7,5 +7,5 @@ urlpatterns = [
     path('why' , why , name='why'),
     path('text-similarity' , text_similarity , name='text-similarity'),
     path('category-detection' , category_detection , name='category-detection'),
-    path('summerzie' , summerzie , name='summerzie'),
+    path('poet' , poet , name='poet'),
 ]
