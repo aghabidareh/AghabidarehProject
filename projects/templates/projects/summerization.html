@@ -1,0 +1,24 @@
+{% extends 'projects/base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/author.css' %}">
+{% endblock %}
+
+{% block content %}
+	<section class="intro">
+        <h1>پروژه خلاصه ساز</h1>
+        <p>این ابزار برای خلاصه سازی متن شما طراحی شده است، متنی وارد کنید و از قدرت این ابزار آگاه بشوید.</p>
+    </section>
+
+    <section class="author">
+        <form method="POST" action="#" class="form-container">
+            <input type="text" name="topic" placeholder="متن خود را وارد کنید..." required>
+            <button type="submit">خلاصه ساز</button>
+        </form>
+        <div class="result">
+            <h2>متن خلاصه شده:</h2>
+            <p>جالبه: </p>
+        </div>
+    </section>
+{% endblock %}
