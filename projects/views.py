@@ -23,4 +23,4 @@ def category_detection(request):
     return render(request , 'projects/category-detection.html')
 
 def summerzie(request):
-    return render(request, 'projects/summerization.html')
+    return render(request, 'projects/poet.html')
