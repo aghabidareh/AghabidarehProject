@@ -19,7 +19,11 @@
         </form>
         <div class="result">
             <h2>شعر شما:</h2>
-            <p>{{ result|linebreaks }}</p>
+            {% if result %}
+            	<p>{{ result|linebreaks }}</p>
+            {% else %}
+                <p>مصراع مد نظرت رو وارد کن</p>
+            {% endif %} 
         </div>
     </section>
 {% endblock %}
