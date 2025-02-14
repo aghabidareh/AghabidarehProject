@@ -12,9 +12,10 @@
     </section>
 
     <section class="author">
-        <form method="POST" action="#" class="form-container">
+        <form method="POST" class="form-container">
+            {% csrf_token %}
             <input type="text" name="topic" placeholder="متن خود را وارد کنید..." required>
-            <button type="submit">شاعر</button>
+            <button type="submit">شعر</button>
         </form>
         <div class="result">
             <h2>شعر شما:</h2>
