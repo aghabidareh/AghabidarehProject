@@ -180,3 +180,4 @@ projects/modules/category_detection/stemmer.h5
 projects/modules/category_detection/tokenizer.h5
 projects/modules/category_detection/vectorizer.h5
 projects/modules/category_detection/stopwords.txt
+projects/modules/poetry/gpt2-fa-poetry-finetuned
