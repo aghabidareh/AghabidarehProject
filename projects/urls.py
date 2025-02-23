@@ -6,6 +6,6 @@ urlpatterns = [
     path('about-me' , about_me , name='about-me'),
     path('why' , why , name='why'),
     path('text-similarity' , text_similarity , name='text-similarity'),
-    path('category-detection' , category_detection , name='category-detection'),
+    path('category_detection' , category_detection , name='category_detection'),
     path('poet' , poet , name='poet'),
 ]
