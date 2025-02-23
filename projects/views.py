@@ -3,6 +3,8 @@ from django.views.decorators.http import require_GET, require_http_methods
 
 from projects.modules.category_detection.predict import predict
 from projects.modules.poetry.generator import generator
+from projects.modules.text_similarity.predict import calculate_similarity
+
 
 @require_GET
 def index(request):
@@ -18,6 +20,12 @@ def why(request):
 
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
+    if request.method == 'POST':
+        text1 = request.POST['text1']
+        text2 = request.POST['text2']
+        result = calculate_similarity(text1, text2)
+        context = {'result': result}
+        return render(request , 'projects/text-similarity.html', context=context)
     return render(request , 'projects/text-similarity.html')
 
 @require_http_methods(['GET', 'POST'])
