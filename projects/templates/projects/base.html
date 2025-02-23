@@ -22,7 +22,7 @@
                     <a href="#" class="{% if request.path != '/' and request.path != '/about-me' and request.path != '/why' %}active{% endif %}">پروژه‌ها</a>
                     <ul class="dropdown-content">
                         <li><a href="{% url 'text-similarity' %}" class="{% if request.path == '/text-similarity' %}active{% endif %}">شباهت معنایی</a></li>
-                        <li><a href="{% url 'category-detection' %}" class="{% if request.path == '/category_detection' %}active{% endif %}">دسته بندی متن</a></li>
+                        <li><a href="{% url 'category_detection' %}" class="{% if request.path == '/category_detection' %}active{% endif %}">دسته بندی متن</a></li>
                         <li><a href="{% url 'poet' %}" class="{% if request.path == '/poet' %}active{% endif %}">خلاصه ساز</a></li>
                     </ul>
                 </li>

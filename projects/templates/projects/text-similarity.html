@@ -12,7 +12,8 @@
     </section>
 
     <section class="proj">
-        <form action="#" method="post">
+        <form method="post">
+            {% csrf_token %}
             <div class="form-container">
                 <textarea name="text1" placeholder="متن اول را وارد کنید..." rows="6" required></textarea>
                 <textarea name="text2" placeholder="متن دوم را وارد کنید..." rows="6" required></textarea>
@@ -20,8 +21,9 @@
             </div>
         </form>
         <div class="result">
-            <h2>درصد شباهت: 78</h2>
-            <h2>شباهت نسبی و مناسبی دارن</h2>
+            {% if result %}
+                <h2>متون {{ result }} درصد شباهت به همدیگه دارن</h2>
+            {% endif %}
         </div>
     </section>
 {% endblock %}
