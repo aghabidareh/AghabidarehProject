@@ -22,7 +22,7 @@
         </form>
         <div class="result">
             {% if result %}
-                <h2>متون {{ result }} درصد شباهت به همدیگه دارن</h2>
+                <h2>متون {{ result|floatformat:2 }} درصد شباهت به همدیگه دارن</h2>
             {% endif %}
         </div>
     </section>
