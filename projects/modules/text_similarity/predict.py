@@ -4,16 +4,11 @@ from sentence_transformers import SentenceTransformer, util
 from projects.modules.text_similarity.loader import *
 
 def calculate_similarity(text1, text2):
+    global per_model_name
     text1 = text1.split('\n\n')
     text2 = text2.split('\n\n')
 
-    lang1 = detect_language(text1[0])
-    lang2 = detect_language(text2[0])
-
-    if lang1 == 'fa' and lang2 == 'fa':
-        model_name = per_model_name
-    else:
-        return "متن مورد نظر باید فارسی باشد"
+    model_name = per_model_name
 
     model = SentenceTransformer(model_name)
 
