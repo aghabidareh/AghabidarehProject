@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 
-from projects.modules.poetry.generator import generator
-from projects.utiils import similarity_detection, category_serializer
+from projects.utiils import similarity_detection, category_serializer, poetry_creator
 
 
 @require_GET
@@ -26,15 +25,12 @@ def text_similarity(request):
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
     if request.method == "POST":
-        category_serializer(request)
+        return category_serializer(request)
 
     return render(request , 'projects/category-detection.html')
 
 @require_http_methods(['GET', 'POST'])
 def poet(request):
     if request.method == "POST":
-        topic = request.POST['topic']
-        result = generator(topic)
-        context = {'result': result}
-        return render(request, 'projects/poet.html' , context)
+        return poetry_creator(request)
     return render(request, 'projects/poet.html')
