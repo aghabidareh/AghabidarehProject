@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="{% url 'index' %}" class="{% if request.path == '/' %}active{% endif %}">خانه</a></li>
                 <li class="dropdown">
-                    <a href="#" class="{% if request.path != '/' and request.path != '/about-me' and request.path != '/why' %}active{% endif %}">پروژه‌ها</a>
+                    <a href="#" class="{% if 'project' in request.path %}active{% endif %}">پروژه‌ها</a>
                     <ul class="dropdown-content">
                         <li><a href="{% url 'text-similarity' %}" class="{% if request.path == '/text-similarity' %}active{% endif %}">شباهت معنایی</a></li>
                         <li><a href="{% url 'category_detection' %}" class="{% if request.path == '/category_detection' %}active{% endif %}">دسته بندی متن</a></li>
