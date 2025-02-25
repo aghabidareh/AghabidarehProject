@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 
-from projects.modules.category_detection.predict import predict
 from projects.modules.poetry.generator import generator
-from projects.utiils import similarity_detection
+from projects.utiils import similarity_detection, category_serializer
 
 
 @require_GET
@@ -27,10 +26,7 @@ def text_similarity(request):
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
     if request.method == "POST":
-        text = request.POST['text']
-        result = predict(text)
-        context = {'result': result}
-        return render(request, 'projects/category-detection.html' , context)
+        category_serializer(request)
 
     return render(request , 'projects/category-detection.html')
 
