@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 
-from projects.utiils import similarity_detection, category_serializer, poetry_creator
+from projects.utils.utiils import similarity_detection, category_serializer, poetry_creator
 
 
 @require_GET
