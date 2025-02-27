@@ -1,6 +1,13 @@
 from joblib import load
 import nltk
 
+"""
+Loading the all of files and variables to prepare the respond!
+(preprocessor , model and stopword)
+using with and joblib 
+also stopword from nltk
+"""
+
 with open('projects\modules\category_detection\stopwords.txt' , 'r' , encoding='utf-8') as stopwords_file:
     stopwords = stopwords_file.readlines()
 stopwords = [line.replace('\n' , '') for line in stopwords]
