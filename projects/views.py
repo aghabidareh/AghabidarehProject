@@ -31,11 +31,13 @@ def text_similarity(request):
     # render the html
     return render(request , 'projects/text-similarity.html')
 
+# requirement
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
     if request.method == "POST":
+        # response
         return category_serializer(request)
-
+    # render the html
     return render(request , 'projects/category-detection.html')
 
 @require_http_methods(['GET', 'POST'])
