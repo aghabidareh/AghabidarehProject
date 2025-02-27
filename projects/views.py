@@ -4,9 +4,10 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.utils.utiils import similarity_detection, category_serializer, poetry_creator
 
-
+# requirement
 @require_GET
 def index(request):
+    # render the html
     return render(request , 'projects/index.html')
 
 @require_GET
