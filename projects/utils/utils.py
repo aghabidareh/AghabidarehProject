@@ -1,6 +1,4 @@
-from http.client import responses
-
-# necessary imports
+ # necessary imports
 from django.shortcuts import render
 from projects.modules.text_similarity.predict import calculate_similarity
 from projects.modules.category_detection.predict import predict
