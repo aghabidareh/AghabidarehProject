@@ -10,8 +10,10 @@ def index(request):
     # render the html
     return render(request , 'projects/index.html')
 
+# requirement
 @require_GET
 def about_me(request):
+    # render the html
     return render(request , 'projects/about-me.html')
 
 @require_GET
