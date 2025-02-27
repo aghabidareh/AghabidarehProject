@@ -22,10 +22,13 @@ def why(request):
     # render the html
     return render(request , 'projects/why.html')
 
+# requirement
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
     if request.method == 'POST':
+        # response
         return similarity_detection(request)
+    # render the html
     return render(request , 'projects/text-similarity.html')
 
 @require_http_methods(['GET', 'POST'])
