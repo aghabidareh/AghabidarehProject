@@ -16,8 +16,10 @@ def about_me(request):
     # render the html
     return render(request , 'projects/about-me.html')
 
+# requirement
 @require_GET
 def why(request):
+    # render the html
     return render(request , 'projects/why.html')
 
 @require_http_methods(['GET', 'POST'])
