@@ -21,13 +21,27 @@ def similarity_detection(request):
     return render(request, 'projects/text-similarity.html', context=context)
 
 def category_serializer(request):
+    # prepare the input
     text = request.POST['text']
+
+    # prepare the response
     result = predict(text)
+
+    # prepare the context
     context = {'result': result}
+
+    # send the context
     return render(request, 'projects/category-detection.html', context)
 
 def poetry_creator(request):
+    # prepare the input
     topic = request.POST['topic']
+
+    # prepare the response
     result = generator(topic)
+
+    # prepare the context
     context = {'result': result}
+
+    # send the context
     return render(request, 'projects/poet.html', context)
