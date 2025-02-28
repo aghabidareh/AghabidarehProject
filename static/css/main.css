@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'IRANYekan' , sans-serif;
+    font-family: 'IRANYekan', sans-serif;
     direction: rtl;
     background-color: #121212;
     color: #f1f1f1;
@@ -88,7 +88,7 @@ header nav ul li a:hover {
     text-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
 }
 
-.active{
+.active {
     color: #64d268;
     text-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
 }
