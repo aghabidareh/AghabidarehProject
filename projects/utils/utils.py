@@ -1,8 +1,9 @@
- # necessary imports
+# necessary imports
 from django.shortcuts import render
 from projects.modules.text_similarity.predict import calculate_similarity
 from projects.modules.category_detection.predict import predict
 from projects.modules.poetry.generator import generator
+
 
 def similarity_detection(request):
     # process the inputs
@@ -18,6 +19,7 @@ def similarity_detection(request):
     # send the context
     return render(request, 'projects/text-similarity.html', context=context)
 
+
 def category_serializer(request):
     # prepare the input
     text = request.POST['text']
@@ -30,6 +32,7 @@ def category_serializer(request):
 
     # send the context
     return render(request, 'projects/category-detection.html', context)
+
 
 def poetry_creator(request):
     # prepare the input
