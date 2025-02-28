@@ -1,5 +1,6 @@
 from projects.modules.category_detection.loader import *
 
+
 def predict(text):
     """
     prepare the text to predict the response
