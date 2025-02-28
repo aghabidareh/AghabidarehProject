@@ -1,6 +1,7 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer, util
 
+
 def calculate_similarity(text1, text2):
     """
     return the similarity between text1 and text2
@@ -13,8 +14,8 @@ def calculate_similarity(text1, text2):
 
     model = SentenceTransformer(model_name)
 
-    text1_embeddings = model.encode(text1 , convert_to_tensor=True)
-    text2_embeddings = model.encode(text2 , convert_to_tensor=True)
+    text1_embeddings = model.encode(text1, convert_to_tensor=True)
+    text2_embeddings = model.encode(text2, convert_to_tensor=True)
 
     scores = []
     for emb1 in text1_embeddings:
