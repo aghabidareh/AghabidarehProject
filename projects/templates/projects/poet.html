@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-	<section class="intro">
+    <section class="intro">
         <h1>پروژه شاعر</h1>
         <p>با استفاده از این ابزار اشعار مختص به خودت رو تولید کن، کافیه مصراع اول شعرتو بنویسی!</p>
     </section>
@@ -20,10 +20,10 @@
         <div class="result">
             <h2>شعر شما:</h2>
             {% if result %}
-            	<p>{{ result|linebreaks }}</p>
+                <p>{{ result|linebreaks }}</p>
             {% else %}
                 <p>مصراع مد نظرت رو وارد کن</p>
-            {% endif %} 
+            {% endif %}
         </div>
     </section>
 {% endblock %}
