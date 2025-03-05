@@ -18,4 +18,4 @@ class News(models.Model):
 
     @classmethod
     def get_sum_of_news(cls):
-        return cls.objects.count()
+        return cls.objects.filter(is_published=True).count()
