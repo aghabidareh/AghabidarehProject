@@ -15,3 +15,7 @@ class News(models.Model):
 
     def __str__(self):
         return f"{self.title} : {self.description[:10]}"
+
+    @classmethod
+    def get_sum_of_news(cls):
+        return cls.objects.count()
