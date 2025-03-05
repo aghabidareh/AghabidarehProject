@@ -23,7 +23,7 @@ class News(models.Model):
     @classmethod
     def get_news_by_pk(cls , pk):
         try:
-            return cls.objects.filter(is_published=True).get(pk=pk)
+            return cls.objects.filter(is_published=True , pk=pk).first()
         except:
             return None
 
