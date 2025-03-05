@@ -6,7 +6,7 @@ class News(models.Model):
     description = models.TextField()
     is_published = models.BooleanField(default=True)
 
-    image = models.ImageField(upload_to='media/news/' , blank=True , null=True)
+    image = models.ImageField(upload_to='news/' , blank=True , null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
