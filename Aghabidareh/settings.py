@@ -64,7 +64,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # changed from en-us to fa-ir
-LANGUAGE_CODE = 'fa-ir'
+# LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'en-us'
 
 # changed from UTC to Asia/Tehran
 TIME_ZONE = 'Asia/Tehran'
