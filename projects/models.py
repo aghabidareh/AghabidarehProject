@@ -30,3 +30,7 @@ class News(models.Model):
     @classmethod
     def all_news(cls):
         return cls.objects.filter(is_published=True).order_by('-created_at')
+
+    @classmethod
+    def get_title_of_a_news(cls, pk):
+        return cls.objects.filter(is_published=True, pk=pk).first().title
