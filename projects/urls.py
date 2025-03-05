@@ -1,5 +1,5 @@
 from django.urls import path
-from projects.views import index , about_me , why , text_similarity , category_detection , poet
+from projects.views import *
 
 urlpatterns = [
     # index page
