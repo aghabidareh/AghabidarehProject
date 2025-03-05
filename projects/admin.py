@@ -7,7 +7,7 @@ from projects.models import News
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('title','description' , 'is_published')
     list_filter = ('is_published',)
-    list_display_links = ('title',)
+    list_display_links = ('title','description')
     list_per_page = 50
     list_editable = ('is_published',)
     search_fields = ('title','description')
