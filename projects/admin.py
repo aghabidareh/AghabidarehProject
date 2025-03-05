@@ -10,7 +10,10 @@ class NewsAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
     search_fields = ('title','description')
     list_per_page = 50
-    actions = ('publish',)
+    actions = ('publish','private')
 
     def publish(self, request, queryset):
         queryset.update(is_published=True)
+
+    def private(self, request, queryset):
+        queryset.update(is_published=False)
