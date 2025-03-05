@@ -26,3 +26,7 @@ class News(models.Model):
             return cls.objects.filter(is_published=True).get(pk=pk)
         except:
             return None
+
+    @classmethod
+    def all_news(cls):
+        return cls.objects.filter(is_published=True).order_by('-created_at')
