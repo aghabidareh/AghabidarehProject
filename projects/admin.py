@@ -5,4 +5,8 @@ from projects.models import News
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title','description' , 'is_published')
+    list_filter = ('is_published',)
+    list_display_links = ('title',)
+    search_fields = ('title','description')
+    list_per_page = 50
