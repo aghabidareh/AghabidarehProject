@@ -6,7 +6,6 @@ from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
 from projects.utils.utils import similarity_detection, category_serializer, poetry_creator
 
-# requirement
 @require_GET
 def index(request):
     """
@@ -15,7 +14,6 @@ def index(request):
     """
     return render(request , 'projects/index.html')
 
-# requirement
 @require_GET
 def about_me(request):
     """
@@ -24,7 +22,6 @@ def about_me(request):
     """
     return render(request , 'projects/about-me.html')
 
-# requirement
 @require_GET
 def why(request):
     """
@@ -33,7 +30,6 @@ def why(request):
     """
     return render(request , 'projects/why.html')
 
-# requirement
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
     """
@@ -44,7 +40,6 @@ def text_similarity(request):
         return similarity_detection(request)
     return render(request , 'projects/text-similarity.html')
 
-# requirement
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
     """
@@ -55,7 +50,6 @@ def category_detection(request):
         return category_serializer(request)
     return render(request , 'projects/category-detection.html')
 
-# requirement
 @require_http_methods(['GET', 'POST'])
 def poet(request):
     """
