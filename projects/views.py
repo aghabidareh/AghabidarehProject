@@ -48,3 +48,12 @@ def poet(request):
         return poetry_creator(request)
     # render the html
     return render(request, 'projects/poet.html')
+
+
+@require_GET
+def news(request):
+    pass
+
+@require_GET
+def get_news(request , pk):
+    pass
