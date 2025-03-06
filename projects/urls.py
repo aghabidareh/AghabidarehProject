@@ -21,4 +21,5 @@ urlpatterns = [
     path('project/poet' , poet , name='poet'),
 
     path('news' , news , name='news'),
+    path('news/<int:pk>' , get_news , name='get-news'),
 ]
