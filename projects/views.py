@@ -63,7 +63,7 @@ def news(request):
     return render(request, 'projects/news.html' , context)
 
 @require_GET
-def get_news(request , pk):
+def news_page(request , pk):
     """
     :param request:
     :param pk: the id of the news
