@@ -52,7 +52,11 @@ def poet(request):
 
 @require_GET
 def news(request):
-    pass
+    """
+    :param request:
+    :return: html page of news
+    """
+    return render(request, 'projects/news.html')
 
 @require_GET
 def get_news(request , pk):
