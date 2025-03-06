@@ -36,4 +36,7 @@ class News(models.Model):
 
     @classmethod
     def get_title_of_a_news(cls, pk):
-        return cls.objects.filter(is_published=True, pk=pk).first().title
+        try:
+            return cls.objects.filter(is_published=True, pk=pk).first().title
+        except:
+            return None
