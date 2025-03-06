@@ -36,6 +36,10 @@ def why(request):
 # requirement
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
+    """
+    :param request: text1 and text2 , type : POST
+    :return: text similarity page or the similarity between text1 and text2
+    """
     if request.method == 'POST':
         return similarity_detection(request)
     return render(request , 'projects/text-similarity.html')
