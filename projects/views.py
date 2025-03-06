@@ -69,4 +69,6 @@ def news_page(request , pk):
     :param pk: the id of the news
     :return: render the page of the news
     """
-    return render(request, 'projects/news-page.html')
+    news = News.get_news_by_pk(pk=pk)
+    context = {'news': news}
+    return render(request, 'projects/news-page.html' , context)
