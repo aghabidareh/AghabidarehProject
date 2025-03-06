@@ -58,6 +58,10 @@ def category_detection(request):
 # requirement
 @require_http_methods(['GET', 'POST'])
 def poet(request):
+    """
+    :param request: topic , type : POST
+    :return: the poet page or the poet of input topic
+    """
     if request.method == "POST":
         return poetry_creator(request)
     return render(request, 'projects/poet.html')
