@@ -9,16 +9,28 @@ from projects.utils.utils import similarity_detection, category_serializer, poet
 # requirement
 @require_GET
 def index(request):
+    """
+    :param request:
+    :return: index page
+    """
     return render(request , 'projects/index.html')
 
 # requirement
 @require_GET
 def about_me(request):
+    """
+    :param request:
+    :return: about me page
+    """
     return render(request , 'projects/about-me.html')
 
 # requirement
 @require_GET
 def why(request):
+    """
+    :param request:
+    :return: why page
+    """
     return render(request , 'projects/why.html')
 
 # requirement
