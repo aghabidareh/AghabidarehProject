@@ -6,7 +6,7 @@ class News(models.Model):
     description = models.TextField()
     is_published = models.BooleanField(default=True)
 
-    image = models.ImageField(upload_to='news/' , blank=True , null=True)
+    image = models.ImageField(upload_to='news/', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -24,9 +24,9 @@ class News(models.Model):
         return cls.objects.filter(is_published=True).count()
 
     @classmethod
-    def get_news_by_pk(cls , pk):
+    def get_news_by_pk(cls, pk):
         try:
-            return cls.objects.filter(is_published=True , pk=pk).first()
+            return cls.objects.filter(is_published=True, pk=pk).first()
         except:
             return None
 
