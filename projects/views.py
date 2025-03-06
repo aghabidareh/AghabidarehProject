@@ -2,6 +2,8 @@
 # necessary imports
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
+
+from projects.models import News
 from projects.utils.utils import similarity_detection, category_serializer, poetry_creator
 
 # requirement
@@ -56,7 +58,9 @@ def news(request):
     :param request:
     :return: html page of news
     """
-    return render(request, 'projects/news.html')
+    result = News.all_news()
+    context = {'news': result}
+    return render(request, 'projects/news.html' , context)
 
 @require_GET
 def get_news(request , pk):
