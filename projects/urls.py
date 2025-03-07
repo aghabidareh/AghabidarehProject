@@ -20,6 +20,9 @@ urlpatterns = [
     # poetry project page
     path('project/poet' , poet , name='poet'),
 
+    # news page
     path('news' , news , name='news'),
+
+    # the news page
     path('news/<int:pk>' , news_page , name='news-page'),
 ]
