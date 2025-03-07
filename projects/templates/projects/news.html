@@ -1,9 +1,9 @@
 {% extends 'projects/base.html' %}
 {% block content %}
 {% for n in news %}
-	{{ n.title }}
-    {{ n.description }}
-    {{ n.created_at }}
+	{{ n.title }}<br>
+    {{ n.description }}<br>
+    {{ n.created_at }}<br>
 {% endfor %}
 
 {% endblock %}
