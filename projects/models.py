@@ -8,7 +8,7 @@ class News(models.Model):
 
     image = models.ImageField(upload_to='news/', blank=True, null=True)
 
-    slug = models.SlugField(unique=True , max_length=64)
+    slug = models.SlugField(unique=True , max_length=64 , null=True , blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
