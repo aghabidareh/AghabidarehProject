@@ -33,6 +33,10 @@ class News(models.Model):
             return None
 
     @classmethod
+    def get_news_by_slug(cls, slug):
+        return cls.objects.filter( is_published=True , slug=slug).first()
+
+    @classmethod
     def all_news(cls):
         return cls.objects.filter(is_published=True).order_by('-created_at')
 
