@@ -81,8 +81,8 @@ def news(request):
 def news_page(request, pk=None , slug=None):
     """
     :param request:
-    :param pk: the id of the news
-    :param slug: the slug of the news
+    :param pk: the id of the news (optional)
+    :param slug: the slug of the news (optional)
     :return: render the page of the news
     """
     if pk:
