@@ -34,7 +34,10 @@ class News(models.Model):
 
     @classmethod
     def get_news_by_slug(cls, slug):
-        return cls.objects.filter( is_published=True , slug=slug).first()
+        try:
+            return cls.objects.filter(is_published=True, slug=slug).first()
+        except:
+            return None
 
     @classmethod
     def all_news(cls):
