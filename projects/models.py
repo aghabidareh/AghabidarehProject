@@ -22,7 +22,7 @@ class News(models.Model):
     def has_image(self):
         return bool(self.image)
 
-    def get_excerpt(self, length=100):
+    def get_excerpt(self, length=50):
         return self.description[:length] + ('...' if len(self.description) > length else '')
 
     def __str__(self):
