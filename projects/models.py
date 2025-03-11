@@ -49,3 +49,6 @@ class News(models.Model):
             return cls.objects.filter(is_published=True, pk=pk).first().title
         except:
             return None
+
+    def has_image(self):
+        return bool(self.image)
