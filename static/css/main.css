@@ -400,12 +400,12 @@ footer .social-icon:hover {
 
 
 .news {
-    background-color: #1a1a1a;
-    padding: 40px 20px;
-    margin: 50px auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    padding: 50px 20px;
     text-align: center;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    margin: 50px auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transform: rotateX(-20deg);
     animation: cardAppear 1s forwards;
@@ -420,47 +420,70 @@ footer .social-icon:hover {
     transform: rotateY(10deg);
 }
 
-.news-item {
-    background-color: #2a2a2a;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    text-align: left;
+.news-cards {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background-color: #2a2a2a;
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    opacity: 0;
+    transform: rotateX(-20deg);
+    animation: cardAppear 1s forwards;
+    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+}
+
+.news-card:hover {
+    transform: scale(1.05) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+    background-color: #333;
+    background: linear-gradient(145deg, #333, #444);
 }
 
 .news-image {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 200px;
     border-radius: 8px;
     object-fit: cover;
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
-.news-content {
-    flex: 1;
+.news-card:hover .news-image {
+    transform: scale(1.05);
 }
 
-.news-item h3 {
+.news-content {
+    text-align: right;
+}
+
+.news-content h3 {
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 10px;
     color: #f1f1f1;
+    transition: color 0.3s ease;
 }
 
-.news-item p {
+.news-content p {
     font-size: 16px;
     color: #bbb;
     line-height: 1.6;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 .news-link {
     display: inline-block;
-    margin-top: 15px;
     padding: 10px 20px;
     background-color: #4caf50;
     color: white;
@@ -474,21 +497,11 @@ footer .social-icon:hover {
     transform: translateY(-3px);
 }
 
-.news-item:hover .news-image {
-    transform: scale(1.05);
-}
-
-.news-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    background-color: #333;
-}
-
-.news-item:hover h3 {
+.news-card:hover h3 {
     color: #4caf50;
 }
 
-.news-item:hover p {
+.news-card:hover p {
     color: #ddd;
 }
 
