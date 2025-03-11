@@ -1,16 +1,32 @@
 {% extends 'projects/base.html' %}
 {% block content %}
-    <div class="news">
+    <section class="news">
         <h2>اخبار</h2>
-        {% for n in news %}
-            <div class="news-item">
-                {% if n.has_image %}
-                	<img src="{{ n.image.url }}" alt="{{ n.title }}" class="news-image">
-                {% endif %} 
-                <h3>{{ n.title }}</h3>
-                <p>{{ n.get_excerpt }}</p>
-                <a href="{% url 'projects:news-page' n.id %}" class="news-link">Read More</a>
+        <div class="news-cards">
+            <div class="news-card" onclick="location_href('{% url 'news:news1' %}')">
+                <img src="path/to/image1.jpg" alt="News Image 1" class="news-image">
+                <div class="news-content">
+                    <h3>عنوان خبر اول</h3>
+                    <p>توضیح کوتاهی درباره خبر اول اینجا قرار می‌گیرد. این متن می‌تواند خلاصه‌ای از خبر باشد.</p>
+                    <a href="{% url 'news:news1' %}" class="news-link">ادامه مطلب</a>
+                </div>
             </div>
-        {% endfor %}
-    </div>
+            <div class="news-card" onclick="location_href('{% url 'news:news2' %}')">
+                <img src="path/to/image2.jpg" alt="News Image 2" class="news-image">
+                <div class="news-content">
+                    <h3>عنوان خبر دوم</h3>
+                    <p>توضیح کوتاهی درباره خبر دوم اینجا قرار می‌گیرد. این متن می‌تواند خلاصه‌ای از خبر باشد.</p>
+                    <a href="{% url 'news:news2' %}" class="news-link">ادامه مطلب</a>
+                </div>
+            </div>
+            <div class="news-card" onclick="location_href('{% url 'news:news3' %}')">
+                <img src="path/to/image3.jpg" alt="News Image 3" class="news-image">
+                <div class="news-content">
+                    <h3>عنوان خبر سوم</h3>
+                    <p>توضیح کوتاهی درباره خبر سوم اینجا قرار می‌گیرد. این متن می‌تواند خلاصه‌ای از خبر باشد.</p>
+                    <a href="{% url 'news:news3' %}" class="news-link">ادامه مطلب</a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
