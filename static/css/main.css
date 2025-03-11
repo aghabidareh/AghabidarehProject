@@ -385,3 +385,55 @@ footer .social-icon:hover {
         right: 20px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news {
+    background-color: #2a2a2a;
+    padding: 30px;
+    margin: 50px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    opacity: 0;
+    transform: rotateX(-20deg);
+    animation: newsAppear 1s forwards;
+}
+
+.news h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #4caf50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.news p {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+@keyframes newsAppear {
+    from {
+        opacity: 0;
+        transform: rotateX(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
