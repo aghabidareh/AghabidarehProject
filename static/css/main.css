@@ -428,14 +428,21 @@ footer .social-icon:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
     text-align: left;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .news-image {
-    width: 100%;
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
     border-radius: 8px;
-    margin-bottom: 15px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
     transition: transform 0.3s ease;
+}
+
+.news-content {
+    flex: 1;
 }
 
 .news-item h3 {
