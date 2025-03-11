@@ -2,13 +2,15 @@
 {% block content %}
     {% for n in news %}
         <div class="news-card">
-            <div class="news-image">
-                <img src="your-image-url.jpg" alt="Latest News">
-            </div>
+            {% if n.has_image %}
+            	<div class="news-image">
+                    <img src="{{ n.image.url }}" alt="{{ n.title }}">
+                </div>
+            {% endif %} 
             <div class="news-info">
-                <h3>Latest News</h3>
-                <p>Stay updated with the latest trends and announcements!</p>
-                <a href="news-page.html" class="news-button">
+                <h3>{{ n.title }}</h3>
+                <p>{{ n.get_excerpt }}</p>
+                <a href="{% url 'projects:news-page' pk=n.id %}" class="news-button">
                     <button>Read More</button>
                 </a>
             </div>
