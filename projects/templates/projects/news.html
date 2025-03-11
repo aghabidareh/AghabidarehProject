@@ -1,13 +1,15 @@
 {% extends 'projects/base.html' %}
 {% block content %}
     {% for n in news %}
-        {{ n.title }}<br>
-        {% if n.has_image %}
-        	<img width="50" height="50" src="{{ n.image.url }}" alt="{{ n.title }}"><br>
-        {% endif %} 
-        {{ n.get_excerpt }}<br>
-        {{ n.created_at }}<br>
-        <a href="{% url 'projects:news-page' pk=n.id %}">Detail of the news</a>
+        <div class="news">
+            {{ n.title }}<br>
+            {% if n.has_image %}
+                <img width="50" height="50" src="{{ n.image.url }}" alt="{{ n.title }}"><br>
+            {% endif %} 
+            {{ n.get_excerpt }}<br>
+            {{ n.created_at }}<br>
+            <a href="{% url 'projects:news-page' pk=n.id %}">Detail of the news</a>
+        </div>
     {% endfor %}
 
 {% endblock %}
