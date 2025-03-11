@@ -52,3 +52,6 @@ class News(models.Model):
 
     def has_image(self):
         return bool(self.image)
+
+    def get_excerpt(self, length=100):
+        return self.description[:length] + ('...' if len(self.description) > length else '')
