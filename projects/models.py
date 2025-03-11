@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class News(models.Model):
@@ -26,6 +27,11 @@ class News(models.Model):
 
     def __str__(self):
         return f"{self.title} : {self.description[:10]}"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
     @classmethod
     def get_sum_of_news(cls):
