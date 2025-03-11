@@ -10,8 +10,8 @@ class NewsAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
     list_per_page = 50
     list_editable = ('is_published',)
-    search_fields = ('title','description')
-    actions = ('publish','private')
+    search_fields = ('title', 'description')
+    actions = ('publish', 'private')
 
     def publish(self, request, queryset):
         queryset.update(is_published=True)
@@ -22,5 +22,5 @@ class NewsAdmin(admin.ModelAdmin):
     def get_actions(self, request):
         actions = super().get_actions(request)
         if not request.user.has_perm('projects.change_news'):
-            actions = {key:value for key , value , in actions.items() if key in ['view_news']}
+            actions = {key: value for key, value, in actions.items() if key in ['view_news']}
         return actions
