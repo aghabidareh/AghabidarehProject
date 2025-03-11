@@ -1,6 +1,8 @@
 from django.urls import path
 from projects.views import *
 
+app_name = 'projects'
+
 urlpatterns = [
     # index page
     path('', index, name='index'),
