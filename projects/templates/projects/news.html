@@ -6,8 +6,8 @@
             {% for n in news %}
                 <div class="news-card" onclick="location_href('{% url 'projects:news-page' n.id %}')">
                     {% if n.has_image %}
-                    	<img src="{{ n.image.url }}" alt="{{ n.title }}" class="news-image">
-                    {% endif %} 
+                        <img src="{{ n.image.url }}" alt="{{ n.title }}" class="news-image" loading="lazy">
+                    {% endif %}
                     <div class="news-content">
                         <h3>{{ n.title }}</h3>
                         <p>{{ n.get_excerpt }}</p>
