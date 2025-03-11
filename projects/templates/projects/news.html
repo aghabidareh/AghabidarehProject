@@ -4,7 +4,7 @@
         {{ n.title }}<br>
         {{ n.description }}<br>
         {{ n.created_at }}<br>
-        <a href="{% url 'news-page' pk=n.id %}">Detail of the news</a>
+        <a href="{% url 'projects:news-page' pk=n.id %}">Detail of the news</a>
     {% endfor %}
 
 {% endblock %}
