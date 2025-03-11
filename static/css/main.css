@@ -434,10 +434,10 @@ footer .social-icon:hover {
 }
 
 .news-image {
-    width: 150px; /* Adjust the width as needed */
-    height: 150px; /* Adjust the height as needed */
+    width: 150px;
+    height: 150px;
     border-radius: 8px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
