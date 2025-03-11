@@ -399,78 +399,69 @@ footer .social-icon:hover {
 
 
 
-.news {
-    background-color: #2a2a2a;
-    padding: 30px;
-    margin: 50px 0;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    opacity: 0;
-    transform: rotateX(-20deg);
-    animation: newsAppear 1s forwards;
+.news-card {
+    display: flex;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    margin: 40px 0;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
-.news h2 {
-    font-size: 30px;
-    font-weight: 600;
-    color: #4caf50;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.news p {
-    font-size: 18px;
-    color: #bbb;
-    line-height: 1.6;
-    letter-spacing: 1px;
-}
-
-.news-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.news-image:hover {
+.news-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.news-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.news-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #ccc;
+}
+
+.news-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.news-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .news-button {
     display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
 }
 
 .news-button button {
     background-color: #4caf50;
     color: white;
-    padding: 15px 30px;
+    padding: 12px 25px;
     font-size: 16px;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .news-button button:hover {
     background-color: #45a049;
-    transform: scale(1.1);
-}
-
-@keyframes newsAppear {
-    from {
-        opacity: 0;
-        transform: rotateX(-20deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateX(0);
-    }
+    transform: translateY(-3px);
 }
 
