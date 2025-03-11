@@ -2,7 +2,7 @@
 {% block content %}
     {% for n in news %}
         {{ n.title }}<br>
-        <img src="{{ n.image.url }}" alt="{{ n.title }}"><br>
+        <img width="50" height="50" src="{{ n.image.url }}" alt="{{ n.title }}"><br>
         {{ n.description }}<br>
         {{ n.created_at }}<br>
         <a href="{% url 'projects:news-page' pk=n.id %}">Detail of the news</a>
