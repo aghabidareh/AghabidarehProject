@@ -18,6 +18,12 @@ class News(models.Model):
         verbose_name_plural = 'News'
         verbose_name = 'News'
 
+    def has_image(self):
+        return bool(self.image)
+
+    def get_excerpt(self, length=100):
+        return self.description[:length] + ('...' if len(self.description) > length else '')
+
     def __str__(self):
         return f"{self.title} : {self.description[:10]}"
 
@@ -49,9 +55,3 @@ class News(models.Model):
             return cls.objects.filter(is_published=True, pk=pk).first().title
         except:
             return None
-
-    def has_image(self):
-        return bool(self.image)
-
-    def get_excerpt(self, length=100):
-        return self.description[:length] + ('...' if len(self.description) > length else '')
