@@ -32,7 +32,7 @@ class News(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+        super(News, self).save(*args, **kwargs)
 
     @classmethod
     def get_sum_of_news(cls):
