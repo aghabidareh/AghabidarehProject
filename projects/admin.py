@@ -12,6 +12,7 @@ class NewsAdmin(admin.ModelAdmin):
     list_editable = ('is_published',)
     search_fields = ('title', 'description')
     actions = ('publish', 'private')
+    exclude = ('slug',)
 
     def publish(self, request, queryset):
         queryset.update(is_published=True)
