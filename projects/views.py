@@ -78,13 +78,12 @@ def news(request):
 
 
 @require_GET
-def news_page(request, pk=None , slug=None):
+def news_page(request,slug=None):
     """
     :param request:
     :param slug: the slug of the news (optional)
     :return: render the page of the news
     """
-    elif slug:
-        news = News.get_news_by_slug(slug=slug)
+    news = News.get_news_by_slug(slug=slug)
     context = {'news': news}
     return render(request, 'projects/news-page.html', context)
