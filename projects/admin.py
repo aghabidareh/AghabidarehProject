@@ -8,7 +8,7 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_published')
     list_filter = ('is_published',)
     list_display_links = ('title',)
-    list_per_page = 50
+    list_per_page = 10
     list_editable = ('is_published',)
     search_fields = ('title', 'description')
     actions = ('publish', 'private')
