@@ -1,7 +1,6 @@
 # necessary imports
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
-
 from projects.models import News
 from projects.utils.utils import similarity_detection, category_serializer, poetry_creator
 
