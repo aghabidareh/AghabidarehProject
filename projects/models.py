@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.text import slugify
+from slugify import slugify
 
 
 class News(models.Model):
