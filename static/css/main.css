@@ -310,83 +310,6 @@ footer .social-icon:hover {
     box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes parallaxEffect {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
-@keyframes infiniteRotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes mainAppear {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: rotateX(-20deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateX(0);
-    }
-}
-
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .project-cards {
-        flex-direction: column;
-    }
-
-    footer .footer-info, footer .footer-links, footer .footer-social {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-    }
-}
-
-
 .news {
     padding: 50px 20px;
     text-align: center;
@@ -491,5 +414,81 @@ footer .social-icon:hover {
 
 .news-card:hover p {
     color: #ddd;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes parallaxEffect {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes infiniteRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes mainAppear {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: rotateX(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-cards {
+        flex-direction: column;
+    }
+
+    footer .footer-info, footer .footer-links, footer .footer-social {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
