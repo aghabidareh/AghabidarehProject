@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.utils.text import slugify
 
 
@@ -11,8 +12,8 @@ class News(models.Model):
 
     slug = models.SlugField(unique=True, max_length=64, null=True, blank=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True , default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True , default=timezone.now)
 
     class Meta:
         ordering = ['-created_at']
