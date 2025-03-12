@@ -11,7 +11,7 @@
                     <div class="news-content">
                         <h3>{{ n.title }}</h3>
                         <p>{{ n.get_excerpt }}</p>
-                        <a href="{% url 'projects:news-page' n.slug %}" class="news-link">ادامه مطلب</a>
+                        <a href="{% url 'projects:news-page' slug=n.slug %}" class="news-link">ادامه مطلب</a>
                     </div>
                 </div>
             {% endfor %}
