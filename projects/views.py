@@ -77,7 +77,7 @@ def news(request):
 
 
 @require_GET
-def news_page(request,slug=None):
+def news_page(request, slug=None):
     """
     :param request:
     :param slug: the slug of the news (optional)
