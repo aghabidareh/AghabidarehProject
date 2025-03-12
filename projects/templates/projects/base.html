@@ -34,7 +34,7 @@
                 <li><a href="{% url 'projects:about-me' %}" class="{% if request.path == '/about-me' %}active{% endif %}">درباره‌ی
                     من</a></li>
                 <li><a href="{% url 'projects:why' %}" class="{% if request.path == '/why' %}active{% endif %}">علل وجود</a></li>
-                <li><a href="{% url 'projects:news' %}" class="{% if request.path == '/news' %}active{% endif %}">اخبار</a></li>
+                <li><a href="{% url 'projects:news' %}" class="{% if '/news' in request.path %}active{% endif %}">اخبار</a></li>
             </ul>
         </nav>
     </div>
