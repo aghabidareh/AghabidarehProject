@@ -81,12 +81,9 @@ def news(request):
 def news_page(request, pk=None , slug=None):
     """
     :param request:
-    :param pk: the id of the news (optional)
     :param slug: the slug of the news (optional)
     :return: render the page of the news
     """
-    if pk:
-        news = News.get_news_by_pk(pk=pk)
     elif slug:
         news = News.get_news_by_slug(slug=slug)
     context = {'news': news}
