@@ -26,8 +26,5 @@ urlpatterns = [
     path('news', news, name='news'),
 
     # the news page
-    path('news/<int:pk>', news_page, name='news-page'),
-
-    # the news page
     path('news/<slug:slug>', news_page, name='news-page'),
 ]
