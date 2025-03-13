@@ -34,7 +34,7 @@ class News(models.Model):
         super(News, self).save(*args, **kwargs)
 
     @classmethod
-    def get_sum_of_news(cls):
+    def get_news_count(cls):
         return cls.objects.filter(is_published=True).count()
 
     @classmethod
