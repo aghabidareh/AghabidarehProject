@@ -25,6 +25,9 @@ class NewsAdmin(admin.ModelAdmin):
         queryset.update(is_published=False)
 
     def get_actions(self, request):
+        """
+        Restrict actions based on user permissions.
+        """
         actions = super().get_actions(request)
         if not request.user.has_perm('projects.change_news'):
             actions = {key: value for key, value, in actions.items() if key in ['view_news']}
