@@ -19,6 +19,7 @@ class NewsAdmin(admin.ModelAdmin):
         """
         queryset.update(is_published=True)
 
+    @admin.action(description='Unpublish selected news items')
     def private(self, request, queryset):
         """
         Mark selected news items as unpublished.
