@@ -58,8 +58,11 @@ class News(models.Model):
         return cls.objects.filter(is_published=True).order_by('-created_at')
 
     @classmethod
-    def get_title_of_a_news(cls, pk):
-        try:
-            return cls.objects.filter(is_published=True, pk=pk).first().title
-        except:
-            return None
+    def get_news_title(cls, identifier):
+        """
+        Retrieve the title of a news item by its primary key or slug.
+        :param identifier: The primary key (int) or slug (str) of the news item.
+        :return: The title of the news item if found, otherwise None.
+        """
+        news_item = cls.get_news_by_identifier(identifier)
+        return news_item.title if news_item else None
