@@ -22,6 +22,7 @@ class News(models.Model):
         return bool(self.image)
 
     def get_excerpt(self, length=20):
+        """Return a shortened version of the description."""
         return self.description[:length] + ('...' if len(self.description) > length else '')
 
     def __str__(self):
