@@ -18,6 +18,7 @@ class News(models.Model):
         verbose_name = 'News'
 
     def has_image(self):
+        """Check if the news item has an image."""
         return bool(self.image)
 
     def get_excerpt(self, length=20):
