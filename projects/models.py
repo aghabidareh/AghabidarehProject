@@ -39,17 +39,13 @@ class News(models.Model):
         return cls.objects.filter(is_published=True).count()
 
     @classmethod
-    def get_news_by_pk(cls, pk):
+    def get_news_by_identifier(cls, identifier):
         try:
-            return cls.objects.filter(is_published=True, pk=pk).first()
-        except:
-            return None
-
-    @classmethod
-    def get_news_by_slug(cls, slug):
-        try:
-            return cls.objects.filter(is_published=True, slug=slug).first()
-        except:
+            if isinstance(identifier, int):
+                return cls.objects.filter(is_published=True, pk=identifier).first()
+            else:
+                return cls.objects.filter(is_published=True, slug=identifier).first()
+        except (ValueError, cls.DoesNotExist):
             return None
 
     @classmethod
