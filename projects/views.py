@@ -68,8 +68,7 @@ def poet(request):
 @require_GET
 def news(request):
     """
-    :param request:
-    :return: html page of news
+    Render a list of all published news items.
     """
     result = News.all_news()
     context = {'news': result}
