@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import get_object_or_404
 from slugify import slugify
 
 
@@ -6,11 +7,8 @@ class News(models.Model):
     title = models.CharField(max_length=32)
     description = models.TextField()
     is_published = models.BooleanField(default=True)
-
     image = models.ImageField(upload_to='news/', blank=True, null=True)
-
     slug = models.SlugField(unique=True, max_length=64, null=True, blank=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
