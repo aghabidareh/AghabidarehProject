@@ -79,9 +79,8 @@ def news(request):
 @require_GET
 def news_page(request, slug=None):
     """
-    :param request:
-    :param slug: the slug of the news (optional)
-    :return: render the page of the news
+    Render the details of a specific news item.
+    - slug: The slug of the news item to display.
     """
     news = News.get_news_by_identifier(identifier=slug)
     context = {'news': news}
