@@ -46,8 +46,9 @@ def text_similarity(request):
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
     """
-    :param request: text, type : POST
-    :return: category detection page or the category of input text
+    Handle category detection.
+    - GET: Render the category detection page.
+    - POST: Process the input text and return the detected category.
     """
     if request.method == "POST":
         return category_serializer(request)
