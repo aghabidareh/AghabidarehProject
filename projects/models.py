@@ -40,6 +40,11 @@ class News(models.Model):
 
     @classmethod
     def get_news_by_identifier(cls, identifier):
+        """
+        Retrieve a news item by its primary key or slug.
+        :param identifier: The primary key (int) or slug (str) of the news item.
+        :return: The news item if found, otherwise None.
+        """
         try:
             if isinstance(identifier, int):
                 return cls.objects.filter(is_published=True, pk=identifier).first()
