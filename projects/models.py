@@ -35,6 +35,7 @@ class News(models.Model):
 
     @classmethod
     def get_news_count(cls):
+        """Return the count of all published news items."""
         return cls.objects.filter(is_published=True).count()
 
     @classmethod
