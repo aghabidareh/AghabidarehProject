@@ -8,8 +8,7 @@ from projects.utils.utils import similarity_detection, category_serializer, poet
 @require_GET
 def index(request):
     """
-    :param request:
-    :return: index page
+    Render the index page.
     """
     return render(request, 'projects/index.html')
 
