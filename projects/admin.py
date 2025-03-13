@@ -30,5 +30,6 @@ class NewsAdmin(admin.ModelAdmin):
         """
         actions = super().get_actions(request)
         if not request.user.has_perm('projects.change_news'):
-            actions = {key: value for key, value, in actions.items() if key in ['view_news']}
+            del actions['publish']
+            del actions['unpublish']
         return actions
