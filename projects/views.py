@@ -26,8 +26,7 @@ def about_me(request):
 @require_GET
 def why(request):
     """
-    :param request:
-    :return: why page
+    Render the why page.
     """
     return render(request, 'projects/why.html')
 
