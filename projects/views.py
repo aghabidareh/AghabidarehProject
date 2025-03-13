@@ -17,8 +17,7 @@ def index(request):
 @require_GET
 def about_me(request):
     """
-    :param request:
-    :return: about me page
+    Render the about me page.
     """
     return render(request, 'projects/about-me.html')
 
