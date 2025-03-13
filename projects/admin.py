@@ -13,6 +13,9 @@ class NewsAdmin(admin.ModelAdmin):
     exclude = ('slug',)
 
     def publish(self, request, queryset):
+        """
+        Mark selected news items as published.
+        """
         queryset.update(is_published=True)
 
     def private(self, request, queryset):
