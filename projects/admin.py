@@ -12,6 +12,7 @@ class NewsAdmin(admin.ModelAdmin):
     actions = ('publish', 'private')
     exclude = ('slug',)
 
+    @admin.action(description='Publish selected news items')
     def publish(self, request, queryset):
         """
         Mark selected news items as published.
