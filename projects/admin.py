@@ -3,14 +3,16 @@ from projects.models import News
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_published')
-    list_filter = ('is_published',)
+    list_display = ('title', 'is_published', 'created_at', 'updated_at')
+    list_filter = ('is_published', 'created_at', 'updated_at')
     list_display_links = ('title',)
     list_per_page = 10
     list_editable = ('is_published',)
     search_fields = ('title', 'description')
-    actions = ('publish', 'private')
-    exclude = ('slug',)
+    readonly_fields = ('slug', 'created_at', 'updated_at')
+    prepopulated_fields = {'slug': ('title',)}
+    date_hierarchy = 'created_at'
+    actions = ('publish', 'unpublish')
 
     @admin.action(description='Publish selected news items')
     def publish(self, request, queryset):
