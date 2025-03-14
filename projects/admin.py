@@ -1,3 +1,5 @@
+import codecs
+
 from django.contrib import admin
 from projects.models import News
 
@@ -37,12 +39,19 @@ class NewsAdmin(admin.ModelAdmin):
         """
         Export selected news items to a CSV file.
         """
-        response = HttpResponse(content_type='text/csv')
+        response = HttpResponse(content_type='text/csv; charset=utf-8')
         response['Content-Disposition'] = 'attachment; filename="news_export.csv"'
+        response.write(codecs.BOM_UTF8)
         writer = csv.writer(response)
         writer.writerow(['Title', 'Description', 'Is Published', 'Created At', 'Updated At'])
         for news in queryset:
-            writer.writerow([news.title, news.description, news.is_published, news.created_at, news.updated_at])
+            writer.writerow([
+                news.title,
+                news.description,
+                news.is_published,
+                news.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+                news.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
+            ])
         return response
 
     def get_actions(self, request):
