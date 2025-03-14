@@ -34,6 +34,9 @@ class NewsAdmin(admin.ModelAdmin):
 
     @admin.action(description='Export selected news items to CSV')
     def export_to_csv(self, request, queryset):
+        """
+        Export selected news items to a CSV file.
+        """
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="news_export.csv"'
         writer = csv.writer(response)
