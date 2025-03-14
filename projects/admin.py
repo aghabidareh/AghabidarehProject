@@ -18,7 +18,7 @@ class NewsAdmin(admin.ModelAdmin):
     readonly_fields = ('slug', 'created_at', 'updated_at')
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
-    actions = ('publish', 'unpublish' , 'export_to_csv')
+    actions = ('publish', 'unpublish', 'export_to_csv')
 
     @admin.action(description='Publish selected news items')
     def publish(self, request, queryset):
