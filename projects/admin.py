@@ -32,6 +32,7 @@ class NewsAdmin(admin.ModelAdmin):
         """
         queryset.update(is_published=False)
 
+    @admin.action(description='Export selected news items to CSV')
     def export_to_csv(self, request, queryset):
         response = HttpResponse(content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename="news_export.csv"'
