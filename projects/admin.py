@@ -1,6 +1,9 @@
 from django.contrib import admin
 from projects.models import News
 
+import csv
+from django.http import HttpResponse
+
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
@@ -28,6 +31,15 @@ class NewsAdmin(admin.ModelAdmin):
         Mark selected news items as unpublished.
         """
         queryset.update(is_published=False)
+
+    def export_to_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="news_export.csv"'
+        writer = csv.writer(response)
+        writer.writerow(['Title', 'Description', 'Is Published', 'Created At', 'Updated At'])
+        for news in queryset:
+            writer.writerow([news.title, news.description, news.is_published, news.created_at, news.updated_at])
+        return response
 
     def get_actions(self, request):
         """
