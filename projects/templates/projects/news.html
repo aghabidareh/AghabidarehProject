@@ -2,7 +2,7 @@
 {% block content %}
     <section class="news">
         <h2>اخبار</h2>
-        <h3 style="margin-bottom: 50px;">تعداد اخبار ثبت شده : {{ count }}</h3>
+        <h3 style="margin-bottom: 50px;color:snow;display: inline-block;background: linear-gradient(145deg, #3a3a3a, #2a2a2a);padding: 20px; border-radius: 7px ">تعداد اخبار ثبت شده : {{ count }}</h3>
         <div class="news-cards">
             {% for n in news %}
                 <div class="news-card" onclick="location_href('{% url 'projects:news-page' n.id %}')">
