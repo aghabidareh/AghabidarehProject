@@ -71,7 +71,8 @@ def news(request):
     Render a list of all published news items.
     """
     result = News.all_news()
-    context = {'news': result}
+    count = News.get_news_count()
+    context = {'news': result , 'count': count}
     return render(request, 'projects/news.html', context)
 
 
