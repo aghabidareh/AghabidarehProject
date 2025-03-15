@@ -29,7 +29,7 @@ class News(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title, separator='-', allow_unicode=True)
+            self.slug = slugify(self.title, separator='-', allow_unicode=True , lowercase=True , )
         super(News, self).save(*args, **kwargs)
 
     @classmethod
