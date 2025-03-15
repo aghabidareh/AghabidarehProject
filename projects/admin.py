@@ -43,12 +43,13 @@ class NewsAdmin(admin.ModelAdmin):
         response['Content-Disposition'] = 'attachment; filename="news_export.csv"'
         response.write(codecs.BOM_UTF8)
         writer = csv.writer(response)
-        writer.writerow(['Title', 'Description', 'Is Published', 'Created At', 'Updated At'])
+        writer.writerow(['Title', 'Description', 'Is Published', 'Slug', 'Created At', 'Updated At'])
         for news in queryset:
             writer.writerow([
                 news.title,
                 news.description,
                 news.is_published,
+                news.slug,
                 news.created_at.strftime('%Y-%m-%d %H:%M:%S'),
                 news.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
             ])
