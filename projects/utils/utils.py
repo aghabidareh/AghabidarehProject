@@ -59,6 +59,11 @@ class Views:
         return render(request, 'projects/text-similarity.html')
 
     def category_detection_view(self, request):
+        """
+        Handle category detection.
+        - GET: Render the category detection page.
+        - POST: Process the input text and return the detected category.
+        """
         if request.method == "POST":
             return Helpers.category_serializer(request)
         return render(request, 'projects/category-detection.html')
