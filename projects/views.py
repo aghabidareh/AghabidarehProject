@@ -60,9 +60,6 @@ def poet(request):
 
 @require_GET
 def news(request):
-    """
-    Render a list of all published news items.
-    """
     return views.news_view(request)
 
 
