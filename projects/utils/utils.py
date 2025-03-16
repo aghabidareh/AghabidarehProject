@@ -75,6 +75,10 @@ class Views:
         return render(request, 'projects/news.html', context)
 
     def news_page_view(self, request, slug):
+        """
+        Render the details of a specific news item.
+        - slug: The slug of the news item to display.
+        """
         news = News.get_news_by_identifier(identifier=slug)
         context = {'news': news}
         return render(request, 'projects/news-page.html', context)
