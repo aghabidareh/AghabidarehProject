@@ -64,6 +64,11 @@ class Views:
         return render(request, 'projects/category-detection.html')
 
     def poet_view(self, request):
+        """
+        Handle poetry generation.
+        - GET: Render the poet page.
+        - POST: Process the input topic and return the generated poetry.
+            """
         if request.method == "POST":
             return Helpers.poetry_creator(request)
         return render(request, 'projects/poet.html')
