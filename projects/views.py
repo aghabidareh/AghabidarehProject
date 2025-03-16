@@ -41,4 +41,4 @@ def news(request):
 
 @require_GET
 def news_page(request, slug=None):
-    return views.news_page_view(request, slug)
+    return views.news_page(request, slug)
