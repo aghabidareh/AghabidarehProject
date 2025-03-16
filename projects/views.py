@@ -11,10 +11,7 @@ def index(request):
 
 @require_GET
 def about_me(request):
-    """
-    Render the about me page.
-    """
-    return render(request, 'projects/about-me.html')
+    return views.about_me(request)
 
 
 @require_GET
