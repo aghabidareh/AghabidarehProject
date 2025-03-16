@@ -49,29 +49,29 @@ def poetry_creator(request):
     # send the context
     return render(request, 'projects/poet.html', context)
 
+class Views:
+    def text_similarity_view(self , request):
+        if request.method == 'POST':
+            return similarity_detection(request)
+        return render(request, 'projects/text-similarity.html')
 
-def text_similarity_view(request):
-    if request.method == 'POST':
-        return similarity_detection(request)
-    return render(request, 'projects/text-similarity.html')
+    def category_similarity_view(self , request):
+        if request.method == "POST":
+            return category_serializer(request)
+        return render(request, 'projects/category-detection.html')
 
-def category_detection_view(request):
-    if request.method == "POST":
-        return category_serializer(request)
-    return render(request, 'projects/category-detection.html')
+    def poet_view(self , request):
+        if request.method == "POST":
+            return poetry_creator(request)
+        return render(request, 'projects/poet.html')
 
-def poet_view(request):
-    if request.method == "POST":
-        return poetry_creator(request)
-    return render(request, 'projects/poet.html')
+    def news_view(self , request):
+        result = News.all_news()
+        count = News.get_news_count()
+        context = {'news': result, 'count': count}
+        return render(request, 'projects/news.html', context)
 
-def news_view(request):
-    result = News.all_news()
-    count = News.get_news_count()
-    context = {'news': result, 'count': count}
-    return render(request, 'projects/news.html', context)
-
-def news_page_view(request , slug):
-    news = News.get_news_by_identifier(identifier=slug)
-    context = {'news': news}
-    return render(request, 'projects/news-page.html', context)
+    def news_page_view(self , request , slug):
+        news = News.get_news_by_identifier(identifier=slug)
+        context = {'news': news}
+        return render(request, 'projects/news-page.html', context)
