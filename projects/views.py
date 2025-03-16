@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
-from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view, category_detection_view
+from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view, category_detection_view, \
+    poet_view
 
 
 @require_GET
@@ -55,9 +56,7 @@ def poet(request):
     - GET: Render the poet page.
     - POST: Process the input topic and return the generated poetry.
     """
-    if request.method == "POST":
-        return poetry_creator(request)
-    return render(request, 'projects/poet.html')
+    return poet_view(request)
 
 
 @require_GET

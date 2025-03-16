@@ -57,3 +57,8 @@ def category_detection_view(request):
     if request.method == "POST":
         return category_serializer(request)
     return render(request, 'projects/category-detection.html')
+
+def poet_view(request):
+    if request.method == "POST":
+        return poetry_creator(request)
+    return render(request, 'projects/poet.html')
