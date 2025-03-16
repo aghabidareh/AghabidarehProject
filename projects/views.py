@@ -30,11 +30,6 @@ def why(request):
 
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
-    """
-    Handle text similarity detection.
-    - GET: Render the text similarity page.
-    - POST: Process the input texts and return the similarity result.
-    """
     return views.text_similarity_view(request)
 
 
