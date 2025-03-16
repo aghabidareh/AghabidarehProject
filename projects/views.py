@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
-from projects.utils.utils import similarity_detection, category_serializer, poetry_creator
+from projects.utils.utils import category_serializer, poetry_creator , text_similarity_view
 
 
 @require_GET
@@ -35,9 +35,7 @@ def text_similarity(request):
     - GET: Render the text similarity page.
     - POST: Process the input texts and return the similarity result.
     """
-    if request.method == 'POST':
-        return similarity_detection(request)
-    return render(request, 'projects/text-similarity.html')
+    return text_similarity_view(request)
 
 
 @require_http_methods(['GET', 'POST'])

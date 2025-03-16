@@ -46,3 +46,9 @@ def poetry_creator(request):
 
     # send the context
     return render(request, 'projects/poet.html', context)
+
+
+def text_similarity_view(request):
+    if request.method == 'POST':
+        return similarity_detection(request)
+    return render(request, 'projects/text-similarity.html')
