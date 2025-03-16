@@ -1,12 +1,12 @@
 import numpy as np
 from sentence_transformers import SentenceTransformer, util
+from projects.modules.text_similarity.loader import per_model_name
 
 
 def calculate_similarity(text1, text2):
     """
     return the similarity between text1 and text2
     """
-    global per_model_name
     text1 = text1.split('\n\n')
     text2 = text2.split('\n\n')
 
