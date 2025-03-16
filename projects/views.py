@@ -21,7 +21,7 @@ def why(request):
 
 @require_http_methods(['GET', 'POST'])
 def text_similarity(request):
-    return views.text_similarity_view(request)
+    return views.text_similarity(request)
 
 
 @require_http_methods(['GET', 'POST'])
