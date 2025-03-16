@@ -26,7 +26,7 @@ def text_similarity(request):
 
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
-    return views.category_detection_view(request)
+    return views.category_detection(request)
 
 
 @require_http_methods(['GET', 'POST'])
