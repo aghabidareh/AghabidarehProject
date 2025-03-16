@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.utils.utils import Views
 
+views = Views()
 
 @require_GET
 def index(request):
@@ -34,7 +35,7 @@ def text_similarity(request):
     - GET: Render the text similarity page.
     - POST: Process the input texts and return the similarity result.
     """
-    return Views.text_similarity_view(request)
+    return views.text_similarity_view(request)
 
 
 @require_http_methods(['GET', 'POST'])
@@ -44,7 +45,7 @@ def category_detection(request):
     - GET: Render the category detection page.
     - POST: Process the input text and return the detected category.
     """
-    return Views.category_detection_view(request)
+    return views.category_detection_view(request)
 
 
 @require_http_methods(['GET', 'POST'])
@@ -54,7 +55,7 @@ def poet(request):
     - GET: Render the poet page.
     - POST: Process the input topic and return the generated poetry.
     """
-    return Views.poet_view(request)
+    return views.poet_view(request)
 
 
 @require_GET
@@ -62,7 +63,7 @@ def news(request):
     """
     Render a list of all published news items.
     """
-    return Views.news_view(request)
+    return views.news_view(request)
 
 
 @require_GET
@@ -71,4 +72,4 @@ def news_page(request, slug=None):
     Render the details of a specific news item.
     - slug: The slug of the news item to display.
     """
-    return Views.news_page_view(request, slug)
+    return views.news_page_view(request, slug)
