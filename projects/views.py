@@ -71,4 +71,4 @@ def news_page(request, slug=None):
     Render the details of a specific news item.
     - slug: The slug of the news item to display.
     """
-    return news_page_view(request, slug)
+    return Views.news_page_view(request, slug)
