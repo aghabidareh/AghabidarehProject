@@ -72,7 +72,7 @@ class Views:
         """
         return render(request, 'projects/why.html')
 
-    def text_similarity_view(self, request):
+    def text_similarity(self, request):
         """
         Handle text similarity detection.
         - GET: Render the text similarity page.
@@ -82,7 +82,7 @@ class Views:
             return Helpers.similarity_detection(request)
         return render(request, 'projects/text-similarity.html')
 
-    def category_detection_view(self, request):
+    def category_detection(self, request):
         """
         Handle category detection.
         - GET: Render the category detection page.
@@ -92,7 +92,7 @@ class Views:
             return Helpers.category_serializer(request)
         return render(request, 'projects/category-detection.html')
 
-    def poet_view(self, request):
+    def poet(self, request):
         """
         Handle poetry generation.
         - GET: Render the poet page.
@@ -102,7 +102,7 @@ class Views:
             return Helpers.poetry_creator(request)
         return render(request, 'projects/poet.html')
 
-    def news_view(self, request):
+    def news(self, request):
         """
         Render a list of all published news items.
         """
@@ -111,7 +111,7 @@ class Views:
         context = {'news': result, 'count': count}
         return render(request, 'projects/news.html', context)
 
-    def news_page_view(self, request, slug):
+    def news_page(self, request, slug):
         """
         Render the details of a specific news item.
         - slug: The slug of the news item to display.
