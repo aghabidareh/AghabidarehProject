@@ -54,6 +54,11 @@ class Helpers:
 
 class Views:
     def text_similarity_view(self, request):
+        """
+        Handle text similarity detection.
+        - GET: Render the text similarity page.
+        - POST: Process the input texts and return the similarity result.
+        """
         if request.method == 'POST':
             return Helpers.similarity_detection(request)
         return render(request, 'projects/text-similarity.html')
