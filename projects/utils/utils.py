@@ -61,6 +61,9 @@ class Views:
         return render(request, 'projects/index.html')
 
     def about_me(self , request):
+        """
+        Render the about me page.
+        """
         return render(request, 'projects/about-me.html')
 
     def why(self , request):
