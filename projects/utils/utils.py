@@ -1,4 +1,3 @@
-# necessary imports
 from django.shortcuts import render
 
 from projects.models import News
