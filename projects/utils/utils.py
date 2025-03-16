@@ -6,6 +6,7 @@ from projects.modules.text_similarity.predict import calculate_similarity
 from projects.modules.category_detection.predict import predict
 from projects.modules.poetry.generator import generator
 
+
 class Helpers:
     @staticmethod
     def similarity_detection(request):
@@ -50,29 +51,30 @@ class Helpers:
         # send the context
         return render(request, 'projects/poet.html', context)
 
+
 class Views:
-    def text_similarity_view(self , request):
+    def text_similarity_view(self, request):
         if request.method == 'POST':
             return Helpers.similarity_detection(request)
         return render(request, 'projects/text-similarity.html')
 
-    def category_detection_view(self , request):
+    def category_detection_view(self, request):
         if request.method == "POST":
             return Helpers.category_serializer(request)
         return render(request, 'projects/category-detection.html')
 
-    def poet_view(self , request):
+    def poet_view(self, request):
         if request.method == "POST":
             return Helpers.poetry_creator(request)
         return render(request, 'projects/poet.html')
 
-    def news_view(self , request):
+    def news_view(self, request):
         result = News.all_news()
         count = News.get_news_count()
         context = {'news': result, 'count': count}
         return render(request, 'projects/news.html', context)
 
-    def news_page_view(self , request , slug):
+    def news_page_view(self, request, slug):
         news = News.get_news_by_identifier(identifier=slug)
         context = {'news': news}
         return render(request, 'projects/news-page.html', context)
