@@ -68,8 +68,4 @@ def news(request):
 
 @require_GET
 def news_page(request, slug=None):
-    """
-    Render the details of a specific news item.
-    - slug: The slug of the news item to display.
-    """
     return views.news_page_view(request, slug)
