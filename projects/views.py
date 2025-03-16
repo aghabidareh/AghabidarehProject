@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
-from projects.models import News
-from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view, category_detection_view, \
-    poet_view, news_view, news_page_view
+from projects.utils.utils import text_similarity_view, category_detection_view, poet_view, news_view, news_page_view
 
 
 @require_GET
