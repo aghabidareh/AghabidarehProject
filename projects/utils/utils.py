@@ -1,5 +1,7 @@
 # necessary imports
 from django.shortcuts import render
+
+from projects.models import News
 from projects.modules.text_similarity.predict import calculate_similarity
 from projects.modules.category_detection.predict import predict
 from projects.modules.poetry.generator import generator
@@ -62,3 +64,9 @@ def poet_view(request):
     if request.method == "POST":
         return poetry_creator(request)
     return render(request, 'projects/poet.html')
+
+def news_view():
+    result = News.all_news()
+    count = News.get_news_count()
+    context = {'news': result, 'count': count}
+    return render(request, 'projects/news.html', context)
