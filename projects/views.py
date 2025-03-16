@@ -3,6 +3,7 @@ from projects.utils.utils import Views
 
 views = Views()
 
+
 @require_GET
 def index(request):
     return views.index(request)
