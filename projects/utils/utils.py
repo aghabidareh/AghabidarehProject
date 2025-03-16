@@ -53,7 +53,7 @@ class Helpers:
 class Views:
     def text_similarity_view(self , request):
         if request.method == 'POST':
-            return similarity_detection(request)
+            return Helpers.similarity_detection(request)
         return render(request, 'projects/text-similarity.html')
 
     def category_detection_view(self , request):
