@@ -54,7 +54,7 @@ def poet(request):
     - GET: Render the poet page.
     - POST: Process the input topic and return the generated poetry.
     """
-    return poet_view(request)
+    return Views.poet_view(request)
 
 
 @require_GET
