@@ -50,11 +50,6 @@ def category_detection(request):
 
 @require_http_methods(['GET', 'POST'])
 def poet(request):
-    """
-    Handle poetry generation.
-    - GET: Render the poet page.
-    - POST: Process the input topic and return the generated poetry.
-    """
     return views.poet_view(request)
 
 
