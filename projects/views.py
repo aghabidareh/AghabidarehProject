@@ -16,10 +16,7 @@ def about_me(request):
 
 @require_GET
 def why(request):
-    """
-    Render the why page.
-    """
-    return render(request, 'projects/why.html')
+    return views.why(request)
 
 
 @require_http_methods(['GET', 'POST'])
