@@ -40,11 +40,6 @@ def text_similarity(request):
 
 @require_http_methods(['GET', 'POST'])
 def category_detection(request):
-    """
-    Handle category detection.
-    - GET: Render the category detection page.
-    - POST: Process the input text and return the detected category.
-    """
     return views.category_detection_view(request)
 
 
