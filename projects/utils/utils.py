@@ -58,7 +58,7 @@ class Views:
 
     def category_detection_view(self , request):
         if request.method == "POST":
-            return category_serializer(request)
+            return Helpers.category_serializer(request)
         return render(request, 'projects/category-detection.html')
 
     def poet_view(self , request):
