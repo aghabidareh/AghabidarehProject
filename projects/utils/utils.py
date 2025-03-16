@@ -67,6 +67,9 @@ class Views:
         return render(request, 'projects/about-me.html')
 
     def why(self , request):
+        """
+        Render the why page.
+        """
         return render(request, 'projects/why.html')
 
     def text_similarity_view(self, request):
