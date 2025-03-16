@@ -63,7 +63,7 @@ class Views:
 
     def poet_view(self , request):
         if request.method == "POST":
-            return poetry_creator(request)
+            return Helpers.poetry_creator(request)
         return render(request, 'projects/poet.html')
 
     def news_view(self , request):
