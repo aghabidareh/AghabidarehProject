@@ -69,6 +69,9 @@ class Views:
         return render(request, 'projects/poet.html')
 
     def news_view(self, request):
+        """
+        Render a list of all published news items.
+        """
         result = News.all_news()
         count = News.get_news_count()
         context = {'news': result, 'count': count}
