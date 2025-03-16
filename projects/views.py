@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
 from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view, category_detection_view, \
-    poet_view, news_view
+    poet_view, news_view, news_page_view
 
 
 @require_GET
@@ -73,6 +73,4 @@ def news_page(request, slug=None):
     Render the details of a specific news item.
     - slug: The slug of the news item to display.
     """
-    news = News.get_news_by_identifier(identifier=slug)
-    context = {'news': news}
-    return render(request, 'projects/news-page.html', context)
+    return news_page_view(request, slug)
