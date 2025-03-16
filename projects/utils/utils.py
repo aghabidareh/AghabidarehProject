@@ -65,7 +65,7 @@ def poet_view(request):
         return poetry_creator(request)
     return render(request, 'projects/poet.html')
 
-def news_view():
+def news_view(request):
     result = News.all_news()
     count = News.get_news_count()
     context = {'news': result, 'count': count}
