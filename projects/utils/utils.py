@@ -55,6 +55,9 @@ class Helpers:
 class Views:
 
     def index(self , request):
+        """
+        Render the index page.
+        """
         return render(request, 'projects/index.html')
 
     def about_me(self , request):
