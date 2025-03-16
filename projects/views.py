@@ -62,7 +62,7 @@ def news(request):
     """
     Render a list of all published news items.
     """
-    return news_view(request)
+    return Views.news_view(request)
 
 
 @require_GET
