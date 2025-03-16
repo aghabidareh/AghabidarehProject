@@ -6,10 +6,7 @@ views = Views()
 
 @require_GET
 def index(request):
-    """
-    Render the index page.
-    """
-    return render(request, 'projects/index.html')
+    return views.index(request)
 
 
 @require_GET
