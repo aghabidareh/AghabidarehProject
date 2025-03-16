@@ -36,7 +36,7 @@ def poet(request):
 
 @require_GET
 def news(request):
-    return views.news_view(request)
+    return views.news(request)
 
 
 @require_GET
