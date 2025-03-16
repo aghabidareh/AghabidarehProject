@@ -1,4 +1,3 @@
-# necessary imports
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
@@ -72,7 +71,7 @@ def news(request):
     """
     result = News.all_news()
     count = News.get_news_count()
-    context = {'news': result , 'count': count}
+    context = {'news': result, 'count': count}
     return render(request, 'projects/news.html', context)
 
 
