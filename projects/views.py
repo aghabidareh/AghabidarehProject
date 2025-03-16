@@ -31,7 +31,7 @@ def category_detection(request):
 
 @require_http_methods(['GET', 'POST'])
 def poet(request):
-    return views.poet_view(request)
+    return views.poet(request)
 
 
 @require_GET
