@@ -55,7 +55,7 @@ class Views:
             return similarity_detection(request)
         return render(request, 'projects/text-similarity.html')
 
-    def category_similarity_view(self , request):
+    def category_detection_view(self , request):
         if request.method == "POST":
             return category_serializer(request)
         return render(request, 'projects/category-detection.html')
