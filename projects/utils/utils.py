@@ -53,6 +53,8 @@ class Helpers:
 
 
 class Views:
+    def index(self , request):
+        return render(request, 'projects/index.html')
     def text_similarity_view(self, request):
         """
         Handle text similarity detection.
