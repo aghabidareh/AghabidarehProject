@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET, require_http_methods
 from projects.models import News
-from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view
+from projects.utils.utils import category_serializer, poetry_creator, text_similarity_view, category_detection_view
 
 
 @require_GET
@@ -45,9 +45,7 @@ def category_detection(request):
     - GET: Render the category detection page.
     - POST: Process the input text and return the detected category.
     """
-    if request.method == "POST":
-        return category_serializer(request)
-    return render(request, 'projects/category-detection.html')
+    return category_detection_view(request)
 
 
 @require_http_methods(['GET', 'POST'])
