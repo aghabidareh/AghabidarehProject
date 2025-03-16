@@ -70,3 +70,8 @@ def news_view(request):
     count = News.get_news_count()
     context = {'news': result, 'count': count}
     return render(request, 'projects/news.html', context)
+
+def news_page_view(request , slug):
+    news = News.get_news_by_identifier(identifier=slug)
+    context = {'news': news}
+    return render(request, 'projects/news-page.html', context)
