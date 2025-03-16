@@ -53,19 +53,19 @@ class Helpers:
 
 class Views:
 
-    def index(self , request):
+    def index(self, request):
         """
         Render the index page.
         """
         return render(request, 'projects/index.html')
 
-    def about_me(self , request):
+    def about_me(self, request):
         """
         Render the about me page.
         """
         return render(request, 'projects/about-me.html')
 
-    def why(self , request):
+    def why(self, request):
         """
         Render the why page.
         """
