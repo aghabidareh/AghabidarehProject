@@ -9,7 +9,7 @@
     <section class="news-article">
         <!-- Hero Section -->
         <div class="news-hero">
-            <img src="path/to/news-hero-image.jpg" alt="News Hero Image" class="hero-image" loading="lazy">
+            <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
             <div class="hero-content">
                 <h1>{{ news.title }}</h1>
                 <p class="news-date">تاریخ انتشار: {{ news.created_at }}</p>
@@ -19,26 +19,26 @@
         <!-- Main Content -->
         <div class="news-main">
             <div class="news-content">
-                <img src="path/to/news-content-image.jpg" alt="News Content Image" class="content-image" loading="lazy">
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" class="content-image" loading="lazy">
                 <p>{{ news.description }}</p>
             </div>
 
             <!-- Sidebar -->
-            <div class="news-sidebar">
-                <h3>اخبار مرتبط</h3>
-                <div class="related-news">
-                    <div class="related-news-item" onclick="location_href('{% url 'news:related1' %}')">
-                        <img src="path/to/related1.jpg" alt="Related News 1" class="related-image" loading="lazy">
-                        <h4>عنوان خبر مرتبط ۱</h4>
-                        <p>توضیح کوتاهی درباره خبر مرتبط ۱.</p>
-                    </div>
-                    <div class="related-news-item" onclick="location_href('{% url 'news:related2' %}')">
-                        <img src="path/to/related2.jpg" alt="Related News 2" class="related-image" loading="lazy">
-                        <h4>عنوان خبر مرتبط ۲</h4>
-                        <p>توضیح کوتاهی درباره خبر مرتبط ۲.</p>
-                    </div>
-                </div>
-            </div>
+{#            <div class="news-sidebar">#}
+{#                <h3>اخبار مرتبط</h3>#}
+{#                <div class="related-news">#}
+{#                    <div class="related-news-item" onclick="location_href('{% url 'news:related1' %}')">#}
+{#                        <img src="path/to/related1.jpg" alt="Related News 1" class="related-image" loading="lazy">#}
+{#                        <h4>عنوان خبر مرتبط ۱</h4>#}
+{#                        <p>توضیح کوتاهی درباره خبر مرتبط ۱.</p>#}
+{#                    </div>#}
+{#                    <div class="related-news-item" onclick="location_href('{% url 'news:related2' %}')">#}
+{#                        <img src="path/to/related2.jpg" alt="Related News 2" class="related-image" loading="lazy">#}
+{#                        <h4>عنوان خبر مرتبط ۲</h4>#}
+{#                        <p>توضیح کوتاهی درباره خبر مرتبط ۲.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </section>
 {% endblock %}
