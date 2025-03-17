@@ -7,7 +7,6 @@
 {% endblock %}
 {% block content %}
     <section class="news-article">
-        <!-- Hero Section -->
         <div class="news-hero">
             <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
             <div class="hero-content">
@@ -16,13 +15,11 @@
             </div>
         </div>
 
-        <!-- Main Content -->
         <div class="news-main">
             <div class="news-content">
                 <p>{{ news.description }}</p>
             </div>
 
-            <!-- Sidebar -->
             <div class="news-sidebar">
                 <h3>اخبار مرتبط</h3>
                 <div class="related-news">
