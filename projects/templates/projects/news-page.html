@@ -1,4 +1,9 @@
+{% load static %}
+
 {% extends 'projects/base.html' %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/news-page.css' %}">
+{% endblock %}
 {% block content %}
     {{ news.title }}<br>
     {% if news.has_image %}
