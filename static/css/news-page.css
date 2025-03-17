@@ -8,10 +8,9 @@
     transform: rotateX(-20deg);
     animation: cardAppear 1s forwards;
     animation-delay: 1s;
-    max-width: 800px; /* محدود کردن عرض برای خوانایی بهتر */
+    max-width: 800px;
 }
 
-/* Hero Section */
 .news-hero {
     position: relative;
     height: 400px;
