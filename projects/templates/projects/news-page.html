@@ -7,40 +7,42 @@
 {% endblock %}
 {% block content %}
     <section class="news-article">
-    <!-- Hero Section -->
-    <div class="news-hero">
-        <img src="path/to/news-hero-image.jpg" alt="News Hero Image" class="hero-image" loading="lazy">
-        <div class="hero-content">
-            <h1>عنوان خبر</h1>
-            <p class="news-date">تاریخ انتشار: ۱۰ مهر ۱۴۰۲</p>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="news-main">
-        <div class="news-content">
-            <p>این متن کامل خبر است. اینجا می‌توانید جزئیات کامل خبر را بنویسید. این متن می‌تواند شامل چندین پاراگراف باشد. برای مثال، این پاراگراف اول است.</p>
-            <p>این پاراگراف دوم است. شما می‌توانید در این بخش اطلاعات بیشتری درباره خبر اضافه کنید. این بخش می‌تواند شامل تصاویر، ویدیوها یا لینک‌های مرتبط باشد.</p>
-            <img src="path/to/news-content-image.jpg" alt="News Content Image" class="content-image" loading="lazy">
-            <p>این پاراگراف سوم است. در این بخش می‌توانید نتیجه‌گیری یا اطلاعات تکمیلی را اضافه کنید.</p>
+        <!-- Hero Section -->
+        <div class="news-hero">
+            <img src="path/to/news-hero-image.jpg" alt="News Hero Image" class="hero-image" loading="lazy">
+            <div class="hero-content">
+                <h1>عنوان خبر</h1>
+                <p class="news-date">تاریخ انتشار: ۱۰ مهر ۱۴۰۲</p>
+            </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="news-sidebar">
-            <h3>اخبار مرتبط</h3>
-            <div class="related-news">
-                <div class="related-news-item" onclick="location_href('{% url 'news:related1' %}')">
-                    <img src="path/to/related1.jpg" alt="Related News 1" class="related-image" loading="lazy">
-                    <h4>عنوان خبر مرتبط ۱</h4>
-                    <p>توضیح کوتاهی درباره خبر مرتبط ۱.</p>
-                </div>
-                <div class="related-news-item" onclick="location_href('{% url 'news:related2' %}')">
-                    <img src="path/to/related2.jpg" alt="Related News 2" class="related-image" loading="lazy">
-                    <h4>عنوان خبر مرتبط ۲</h4>
-                    <p>توضیح کوتاهی درباره خبر مرتبط ۲.</p>
+        <!-- Main Content -->
+        <div class="news-main">
+            <div class="news-content">
+                <p>این متن کامل خبر است. اینجا می‌توانید جزئیات کامل خبر را بنویسید. این متن می‌تواند شامل چندین
+                    پاراگراف باشد. برای مثال، این پاراگراف اول است.</p>
+                <p>این پاراگراف دوم است. شما می‌توانید در این بخش اطلاعات بیشتری درباره خبر اضافه کنید. این بخش می‌تواند
+                    شامل تصاویر، ویدیوها یا لینک‌های مرتبط باشد.</p>
+                <img src="path/to/news-content-image.jpg" alt="News Content Image" class="content-image" loading="lazy">
+                <p>این پاراگراف سوم است. در این بخش می‌توانید نتیجه‌گیری یا اطلاعات تکمیلی را اضافه کنید.</p>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="news-sidebar">
+                <h3>اخبار مرتبط</h3>
+                <div class="related-news">
+                    <div class="related-news-item" onclick="location_href('{% url 'news:related1' %}')">
+                        <img src="path/to/related1.jpg" alt="Related News 1" class="related-image" loading="lazy">
+                        <h4>عنوان خبر مرتبط ۱</h4>
+                        <p>توضیح کوتاهی درباره خبر مرتبط ۱.</p>
+                    </div>
+                    <div class="related-news-item" onclick="location_href('{% url 'news:related2' %}')">
+                        <img src="path/to/related2.jpg" alt="Related News 2" class="related-image" loading="lazy">
+                        <h4>عنوان خبر مرتبط ۲</h4>
+                        <p>توضیح کوتاهی درباره خبر مرتبط ۲.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
