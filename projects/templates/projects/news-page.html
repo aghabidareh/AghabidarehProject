@@ -1,6 +1,9 @@
 {% extends 'projects/base.html' %}
 {% block content %}
     {{ news.title }}<br>
+    {% if news.has_image %}
+        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+    {% endif %} 
     {{ news.description }}<br>
     {{ created_at }}
 {% endblock %}
