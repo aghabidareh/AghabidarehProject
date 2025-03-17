@@ -2,7 +2,7 @@
 {% block content %}
     {{ news.title }}<br>
     {% if news.has_image %}
-        <img src="{{ news.image.url }}" alt="{{ news.title }}">
+        <img src="{{ news.image.url }}" alt="{{ news.title }}" loading="lazy">
     {% endif %} 
     {{ news.description }}<br>
     {{ created_at }}
