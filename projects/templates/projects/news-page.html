@@ -9,17 +9,16 @@
     <section class="news-article">
         <!-- Hero Section -->
         <div class="news-hero">
-            <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
-            <div class="hero-content">
-                <h1>{{ news.title }}</h1>
-                <p class="news-date">تاریخ انتشار: {{ news.created_at }}</p>
-            </div>
+        <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
+        <div class="hero-content">
+            <h1>{{ news.title }}</h1>
+            <p class="news-date">{{ news.created_at }}</p>
         </div>
+    </div>
 
         <!-- Main Content -->
         <div class="news-main">
             <div class="news-content">
-                <img src="{{ news.image.url }}" alt="{{ news.title }}" class="content-image" loading="lazy">
                 <p>{{ news.description }}</p>
             </div>
 
