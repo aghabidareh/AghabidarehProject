@@ -23,16 +23,14 @@
             <div class="news-sidebar">
                 <h3>اخبار مرتبط</h3>
                 <div class="related-news">
-                    <div class="related-news-item" onclick="location_href('#')">
-                        <img src="path/to/related1.jpg" alt="Related News 1" class="related-image" loading="lazy">
-                        <h4>عنوان خبر مرتبط ۱</h4>
-                        <p>توضیح کوتاهی درباره خبر مرتبط ۱.</p>
+                    {% for rn in related_news %}
+                    	<div class="related-news-item" onclick="location_href('{% url 'projects:news-page' slug=rn.slug %}')">
+                        <img src="{{ rn.image.url }}" alt="Related News 1" class="related-image" loading="lazy">
+                        <h4>{{ rn.title }}</h4>
+                        <p>{{ rn.description }}</p>
                     </div>
-                    <div class="related-news-item" onclick="location_href('#')">
-                        <img src="path/to/related2.jpg" alt="Related News 2" class="related-image" loading="lazy">
-                        <h4>عنوان خبر مرتبط ۲</h4>
-                        <p>توضیح کوتاهی درباره خبر مرتبط ۲.</p>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
