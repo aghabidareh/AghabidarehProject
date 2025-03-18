@@ -1,4 +1,3 @@
-from django.contrib.postgres.search import TrigramSimilarity
 from django.db import models
 from django.db.models import Q
 from slugify import slugify
