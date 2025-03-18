@@ -1,3 +1,4 @@
+from django.contrib.postgres.search import TrigramSimilarity
 from django.db import models
 from slugify import slugify
 
@@ -23,6 +24,18 @@ class News(models.Model):
     def get_excerpt(self, length=20):
         """Return a shortened version of the description."""
         return self.description[:length] + ('...' if len(self.description) > length else '')
+
+    def get_related_news(self , limit=5):
+        return (
+            News.objects
+            .filter(is_published=True)
+            .exclude(id=self.id)
+            .annotate(
+                similarity=TrigramSimilarity('title' , self.title) +
+                TrigramSimilarity('description' , self.description)
+            )
+            .order_by('-similarity')[:limit]
+        )
 
     def __str__(self):
         return f"{self.title} : {self.description[:10]}"
