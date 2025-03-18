@@ -26,7 +26,9 @@ class News(models.Model):
         return self.description[:length] + ('...' if len(self.description) > length else '')
 
     def get_related_news(self , limit=5):
-        """Find related news based on title and description similarity."""
+        """
+        Find related news based on title and description similarity.
+        """
         return (
             News.objects
             .filter(is_published=True)
