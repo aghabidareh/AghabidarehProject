@@ -16,7 +16,6 @@ class NewsAdmin(admin.ModelAdmin):
     list_editable = ('is_published',)
     search_fields = ('title', 'description')
     readonly_fields = ('slug', 'created_at', 'updated_at')
-    prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created_at'
     actions = ('publish', 'unpublish', 'export_to_csv')
 
