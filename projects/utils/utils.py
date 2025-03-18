@@ -116,5 +116,6 @@ class Views:
         - slug: The slug of the news item to display.
         """
         news = News.get_news_by_identifier(identifier=slug)
+        related_news = News.get_related_news(news)
         context = {'news': news}
         return render(request, 'projects/news-page.html', context)
