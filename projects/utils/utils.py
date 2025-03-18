@@ -117,5 +117,5 @@ class Views:
         """
         news = News.get_news_by_identifier(identifier=slug)
         related_news = News.get_related_news(news)
-        context = {'news': news}
+        context = {'news': news , 'related_news': related_news}
         return render(request, 'projects/news-page.html', context)
