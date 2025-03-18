@@ -1,5 +1,6 @@
 from django.contrib.postgres.search import TrigramSimilarity
 from django.db import models
+from django.db.models import Q
 from slugify import slugify
 
 
@@ -29,16 +30,11 @@ class News(models.Model):
         """
         Find related news based on title and description similarity.
         """
-        return (
-            News.objects
-            .filter(is_published=True)
-            .exclude(id=self.id)
-            .annotate(
-                similarity=TrigramSimilarity('title' , self.title) +
-                TrigramSimilarity('description' , self.description)
-            )
-            .order_by('-similarity')[:limit]
-        )
+        words = self.title.split()
+        query = Q()
+        for word in words:
+            query |= Q(title__icontains=word)
+        return News.objects.filter(query, is_published=True).exclude(id=self.id)[:limit]
 
     def __str__(self):
         return f"{self.title} : {self.description[:10]}"
