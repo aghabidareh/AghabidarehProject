@@ -8,7 +8,9 @@
 {% block content %}
     <section class="news-article">
         <div class="news-hero">
-            <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
+            {% if news.has_image %}
+            	<img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
+            {% endif %} 
             <div class="hero-content">
                 <h1>{{ news.title }}</h1>
                 <p class="news-date">{{ news.created_at }}</p>
