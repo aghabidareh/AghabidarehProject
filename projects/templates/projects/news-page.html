@@ -22,7 +22,8 @@
                 <p>{{ news.description }}</p>
             </div>
 
-            <div class="news-sidebar">
+            {% if related_news %}
+            	<div class="news-sidebar">
                 <h3>اخبار مرتبط</h3>
                 <div class="related-news">
                     {% for rn in related_news %}
@@ -37,6 +38,7 @@
                     
                 </div>
             </div>
+            {% endif %} 
         </div>
     </section>
 {% endblock %}
