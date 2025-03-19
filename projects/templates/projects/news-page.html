@@ -9,8 +9,8 @@
     <section class="news-article">
         <div class="news-hero">
             {% if news.has_image %}
-            	<img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
-            {% endif %} 
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" class="hero-image" loading="lazy">
+            {% endif %}
             <div class="hero-content">
                 <h1>{{ news.title }}</h1>
                 <p class="news-date">{{ news.created_at }}</p>
@@ -23,22 +23,24 @@
             </div>
 
             {% if related_news %}
-            	<div class="news-sidebar">
-                <h3>اخبار مرتبط</h3>
-                <div class="related-news">
-                    {% for rn in related_news %}
-                    	<div class="related-news-item" onclick="location_href('{% url 'projects:news-page' slug=rn.slug %}')">
-                        {% if rn.has_image %}
-                        	<img src="{{ rn.image.url }}" alt="Related News 1" class="related-image" loading="lazy">
-                        {% endif %} 
-                        <h4>{{ rn.title }}</h4>
-                        <p>{{ rn.description }}</p>
+                <div class="news-sidebar">
+                    <h3>اخبار مرتبط</h3>
+                    <div class="related-news">
+                        {% for rn in related_news %}
+                            <div class="related-news-item"
+                                 onclick="location_href('{% url 'projects:news-page' slug=rn.slug %}')">
+                                {% if rn.has_image %}
+                                    <img src="{{ rn.image.url }}" alt="Related News 1" class="related-image"
+                                         loading="lazy">
+                                {% endif %}
+                                <h4>{{ rn.title }}</h4>
+                                <p>{{ rn.description }}</p>
+                            </div>
+                        {% endfor %}
+
                     </div>
-                    {% endfor %}
-                    
                 </div>
-            </div>
-            {% endif %} 
+            {% endif %}
         </div>
     </section>
 {% endblock %}
