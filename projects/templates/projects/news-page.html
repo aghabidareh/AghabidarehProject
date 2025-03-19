@@ -25,7 +25,9 @@
                 <div class="related-news">
                     {% for rn in related_news %}
                     	<div class="related-news-item" onclick="location_href('{% url 'projects:news-page' slug=rn.slug %}')">
-                        <img src="{{ rn.image.url }}" alt="Related News 1" class="related-image" loading="lazy">
+                        {% if rn.has_image %}
+                        	<img src="{{ rn.image.url }}" alt="Related News 1" class="related-image" loading="lazy">
+                        {% endif %} 
                         <h4>{{ rn.title }}</h4>
                         <p>{{ rn.description }}</p>
                     </div>
