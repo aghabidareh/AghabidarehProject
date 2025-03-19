@@ -40,6 +40,9 @@ class News(models.Model):
         return News.objects.filter(query, is_published=True).exclude(id=self.id)[:limit]
 
     def __str__(self):
+        """
+        Return a string representation of the news.
+        """
         return f"{self.title} : {self.description[:10]}"
 
     def save(self, *args, **kwargs):
