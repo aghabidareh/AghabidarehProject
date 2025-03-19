@@ -26,6 +26,7 @@ class News(models.Model):
         return self.description[:length] + ('...' if len(self.description) > length else '')
 
     def get_excerpt_news(self):
+        """Return a shortened version of the description for related news."""
         return self.description[:50] + ('...' if len(self.description) > 50 else '')
 
     def get_related_news(self, limit=5):
